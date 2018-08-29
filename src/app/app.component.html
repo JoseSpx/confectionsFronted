@@ -1,3 +1,13 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
-
+<div class="navbar-main">
+    <app-navbar></app-navbar>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="main-body">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

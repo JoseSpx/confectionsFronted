@@ -1,11 +1,41 @@
+.navbar {
+    background-color: var(--primaryColor);
+    color : white;
+    height: 60px;
+}
+
 .navbar-brand{
     display: flex;
     flex-direction: row;
     align-items: center;
+    color: white;
 }
 
 .brand-name {
     text-align: center;
     margin: 0 0 0 15px;
-    font-weight: bold;
+    font-size: 19px;
+    font-family: '', sans-serif;
+    font-weight: 500;
 }
+
+.material-icons:hover {
+    color: #eee;
+}
+
+.i-account {
+    padding-top: 10px; 
+    font-size: 30px;
+}
+
+a::after{
+    display: none;
+}
+
+.dropdown-menu {
+    position: relative;
+    top: 65px;
+    left: -110px;
+}
+
+

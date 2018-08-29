@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { ComponentsModule } from './shared/components/components.module';
 
-
 @NgModule({
   declarations: [
     AppComponent
