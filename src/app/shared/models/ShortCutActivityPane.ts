@@ -4,5 +4,6 @@ export interface ShortCutActivityPane {
     imageUrl : string;
     subtitle : string;
     detailUrl : string;
+    textButton? : string;
 
 } 

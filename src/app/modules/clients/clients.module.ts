@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
 import { ComponentsModule } from './../../shared/components/components.module';
 import { RegisterClientComponent } from './pages/register-client/register-client.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { RegisterClientComponent } from './pages/register-client/register-client
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
-    ComponentsModule
+    ComponentsModule,
+    MatIconModule
   ],
   declarations: [MainDashboardComponent, SearchClientComponent, RegisterClientComponent]
 })

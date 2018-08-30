@@ -20,15 +20,17 @@ export class MainDashboardComponent implements OnInit {
     return [
       {
         title : "Registrar un Nuevo Cliente",
-        imageUrl : "./../../../../assets/img/traje.png",
-        subtitle : "-",
-        detailUrl : "/clientes/registrar"
+        imageUrl : "./../../../../assets/img/man.png",
+        subtitle : " Crea un nuevo cliente",
+        detailUrl : "/clientes/registrar",
+        textButton : "Registrar"
       },
       {
         title : "Ver todos los Clientes",
-        imageUrl : "./../../../../assets/img/dress.png",
-        subtitle : "-",
-        detailUrl : "#"
+        imageUrl : "./../../../../assets/img/list.png",
+        subtitle : "Lista completa de todos los clientes",
+        detailUrl : "#",
+        textButton : "Ver lista"
       }
     ];
   }

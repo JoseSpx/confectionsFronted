@@ -7,6 +7,9 @@ import { ShortcutsPaneComponent } from './shortcuts-pane/shortcuts-pane.componen
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonBackComponent } from './button-back/button-back.component';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   imports: [
@@ -14,17 +17,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     MatCardModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatIconModule
   ],
   exports : [
     NavbarComponent,
     SidebarComponent,
-    ShortcutsPaneComponent
+    ShortcutsPaneComponent,
+    ButtonBackComponent
   ],
   declarations: [
     NavbarComponent,
     SidebarComponent,
-    ShortcutsPaneComponent
+    ShortcutsPaneComponent,
+    ButtonBackComponent
   ]
 })
 export class ComponentsModule { }
