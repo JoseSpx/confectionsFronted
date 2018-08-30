@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShortcutsPaneComponent } from './shortcuts-pane/shortcuts-pane.component';
 import { MatCardModule } from '@angular/material/card';
+import { BoldPipe } from '../../shared/pipes/bold.pipe';
+
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import { MatCardModule } from '@angular/material/card';
   ],
   declarations: [
     DashboardComponent,
-    ShortcutsPaneComponent
+    ShortcutsPaneComponent,
+    BoldPipe
   ],
   exports : [
     DashboardComponent

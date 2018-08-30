@@ -1,19 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ShortCutActivityPane } from '../../../shared/models/ShortCutActivityPane';
+import { ShortCutActivityPane } from './../../../../shared/models/ShortCutActivityPane'
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-main-dashboard',
+  templateUrl: './main-dashboard.component.html',
+  styleUrls: ['./main-dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class MainDashboardComponent implements OnInit {
 
-  public activities : ShortCutActivityPane[]  = [] ;
+  public activities : ShortCutActivityPane[];
 
   constructor() { }
 
   ngOnInit() {
-    this.activities = this.getActivitiesData();
   }
 
   public getActivitiesData() : ShortCutActivityPane[] {
@@ -40,7 +39,3 @@ export class DashboardComponent implements OnInit {
   }
 
 }
-
-
-
-

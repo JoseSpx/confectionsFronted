@@ -4,7 +4,7 @@
         <form>
             <div class="col-8">
                 <mat-form-field class="search-client">
-                    <input matInput placeholder="Buscar un Cliente" value="Jose">
+                    <input matInput placeholder="Buscar un Cliente por DNI" value="76197141">
                 </mat-form-field>
             </div>
             <div class="col-2">
@@ -20,14 +20,8 @@
     </div>
 
     <div class="row mt-4">
-        <div class="col-4">
-            <app-shortcuts-pane></app-shortcuts-pane>
-        </div>
-        <div class="col-4">
-            <app-shortcuts-pane></app-shortcuts-pane>
-        </div>
-        <div class="col-4">
-            <app-shortcuts-pane></app-shortcuts-pane>
+        <div class="col-4" *ngFor="let activity of activities">
+            <app-shortcuts-pane [data]="activity"></app-shortcuts-pane>
         </div>
     </div>
 

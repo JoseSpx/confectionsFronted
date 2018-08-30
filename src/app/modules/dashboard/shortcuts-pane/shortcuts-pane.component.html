@@ -1,17 +1,17 @@
 <mat-card class="example-card">
     <mat-card-header class="d-flex justify-content-center">
       <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title> Inventario de Pedidos para Hoy </mat-card-title>
+      <mat-card-title class="bold"> {{ data.title }} </mat-card-title>
       <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
     </mat-card-header>
     <div class="row">
       <div class="col-12 col-md-6 offset-md-3 d-flex justify-content-center">
-          <img mat-card-image src="./../../../../assets/img/traje.png" alt="Photo of a Shiba Inu">
+          <img mat-card-image [src]="data.imageUrl" alt="Photo of a Shiba Inu">
       </div>
     </div>
     <mat-card-content>
       <p class="text-center">
-        Cantidad : <b> 12 </b>
+        {{ data.subtitle }}
       </p>
     </mat-card-content>
     <mat-card-actions>

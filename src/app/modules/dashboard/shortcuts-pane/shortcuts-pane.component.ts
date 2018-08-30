@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ShortCutActivityPane } from '../../../shared/models/ShortCutActivityPane';
 
 @Component({
   selector: 'app-shortcuts-pane',
@@ -8,13 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ShortcutsPaneComponent implements OnInit {
 
   @Input()
-  public title : string;
-  @Input()
-  public imageUrl : string;
-  @Input()
-  public subtitle : string;
-  @Input()
-  public detailUrl : string;
+  public data : ShortCutActivityPane;
 
   constructor() { }
 

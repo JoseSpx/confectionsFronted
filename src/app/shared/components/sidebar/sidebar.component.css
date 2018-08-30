@@ -32,6 +32,7 @@
     display: block;
     padding: 12px 0;
     cursor: pointer;
+    color: #fff;
     text-align: center;
     /* border-top: 1px solid #eee; */
     border-bottom: 1px solid #eee;
@@ -44,6 +45,7 @@
 
 .item:hover {
     background-color: var(--primaryColor);
+    text-decoration: none;
 }
 
 .active {
