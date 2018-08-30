@@ -22,7 +22,7 @@ export class MainDashboardComponent implements OnInit {
         title : "Registrar un Nuevo Cliente",
         imageUrl : "./../../../../assets/img/traje.png",
         subtitle : "-",
-        detailUrl : "#"
+        detailUrl : "/clientes/registrar"
       },
       {
         title : "Ver todos los Clientes",

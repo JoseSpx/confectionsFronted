@@ -1,22 +1,23 @@
 <mat-card class="example-card">
-    <mat-card-header class="d-flex justify-content-center">
-      <!-- <div mat-card-avatar class="example-header-image"></div> -->
-      <mat-card-title class="bold"> {{ data.title }} </mat-card-title>
-      <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
-    </mat-card-header>
-    <div class="row">
-      <div class="col-12 col-md-6 offset-md-3 d-flex justify-content-center">
-          <img mat-card-image [src]="data.imageUrl" alt="Photo of a Shiba Inu">
-      </div>
+  <mat-card-header class="d-flex justify-content-center">
+    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+    <mat-card-title class="bold"> {{ data.title }} </mat-card-title>
+    <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+  </mat-card-header>
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3 d-flex justify-content-center">
+        <img mat-card-image [src]="data.imageUrl" alt="Photo of a Shiba Inu">
     </div>
-    <mat-card-content>
-      <p class="text-center">
-        {{ data.subtitle }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button color="primary" mat-raised-button class="btn-detail"> Ver Detalles </button>
-      <!-- <button mat-button>SHARE</button> -->
-    </mat-card-actions>
-  </mat-card>
+  </div>
+  <mat-card-content>
+    <p class="text-center">
+      {{ data.subtitle }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="onClick()" color="primary" mat-raised-button class="btn-detail">
+      Ver Detalles 
+    </button>
+  </mat-card-actions>
+</mat-card>
   
