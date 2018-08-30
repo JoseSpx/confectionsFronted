@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-shortcuts-pane',
@@ -6,6 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shortcuts-pane.component.css']
 })
 export class ShortcutsPaneComponent implements OnInit {
+
+  @Input()
+  public title : string;
+  @Input()
+  public imageUrl : string;
+  @Input()
+  public subtitle : string;
+  @Input()
+  public detailUrl : string;
 
   constructor() { }
 
