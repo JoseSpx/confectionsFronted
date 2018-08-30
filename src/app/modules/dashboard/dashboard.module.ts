@@ -4,10 +4,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ShortcutsPaneComponent } from './shortcuts-pane/shortcuts-pane.component';
-import { MatCardModule } from '@angular/material/card';
 import { BoldPipe } from '../../shared/pipes/bold.pipe';
-
+import { ComponentsModule } from '../../shared/components/components.module';
 
 @NgModule({
   imports: [
@@ -15,11 +13,10 @@ import { BoldPipe } from '../../shared/pipes/bold.pipe';
     MatInputModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatCardModule
+    ComponentsModule
   ],
   declarations: [
     DashboardComponent,
-    ShortcutsPaneComponent,
     BoldPipe
   ],
   exports : [

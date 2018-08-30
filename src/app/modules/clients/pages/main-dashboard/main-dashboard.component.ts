@@ -13,26 +13,21 @@ export class MainDashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.activities = this.getActivitiesData();
   }
 
   public getActivitiesData() : ShortCutActivityPane[] {
     return [
       {
-        title : "Inventario de Pedidos para Hoy ",
+        title : "Registrar un Nuevo Cliente",
         imageUrl : "./../../../../assets/img/traje.png",
-        subtitle : "Cantidad : 12",
+        subtitle : "-",
         detailUrl : "#"
       },
       {
-        title : "Ultimos Pedidos Realizados",
+        title : "Ver todos los Clientes",
         imageUrl : "./../../../../assets/img/dress.png",
-        subtitle : "Cantidad : 10",
-        detailUrl : "#"
-      },
-      {
-        title : "Reporte de Pedidos del Día",
-        imageUrl : "./../../../../assets/img/contract.png",
-        subtitle : " _ ",
+        subtitle : "-",
         detailUrl : "#"
       }
     ];
