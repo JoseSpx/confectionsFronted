@@ -11,7 +11,7 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 })
 export class ClientsTableComponent implements OnInit {
 
-  public displayedColumns: string[] = ['nro', 'name', 'lastName', 'dni', 'phone1', 'edit'];
+  public displayedColumns: string[] = ['nro', 'name', 'lastName', 'dni', 'phone1', 'edit', 'orders'];
   public dataSource;
 
   @ViewChild(MatPaginator) 

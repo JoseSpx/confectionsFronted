@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonBackComponent } from './button-back/button-back.component';
 import { MatIconModule } from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { NavbarMaterialComponent } from './navbar-material/navbar-material.component';
 
 
 @NgModule({
@@ -18,19 +20,22 @@ import { MatIconModule } from '@angular/material/icon';
     MatCardModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule
   ],
   exports : [
     NavbarComponent,
     SidebarComponent,
     ShortcutsPaneComponent,
-    ButtonBackComponent
+    ButtonBackComponent,
+    NavbarMaterialComponent
   ],
   declarations: [
     NavbarComponent,
     SidebarComponent,
     ShortcutsPaneComponent,
-    ButtonBackComponent
+    ButtonBackComponent,
+    NavbarMaterialComponent
   ]
 })
 export class ComponentsModule { }
