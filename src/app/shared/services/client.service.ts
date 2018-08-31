@@ -49,6 +49,13 @@ export class ClientService {
       );
   }
 
+  public deleteClient(id : number) : Observable<Client> {
+    return this.http.delete<Client>(API_URL + URL_CONTROLLER + "/" + id)
+      .pipe(
+        catchError(this.handleError<Client>("delete client"))
+      );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
  

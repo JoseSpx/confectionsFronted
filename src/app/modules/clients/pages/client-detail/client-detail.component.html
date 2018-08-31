@@ -4,7 +4,7 @@
 <div *ngIf="client" class="container-fluid">
     <div class="row">
         <div class="col-12">
-          <app-button-back></app-button-back>
+          <app-button-back #btnBack></app-button-back>
         </div>
       </div>
   <div class="row mt-4">
@@ -15,7 +15,7 @@
   </div>
   <div class="row">
     <div class="col-10 d-flex justify-content-end">
-      <button mat-raised-button color="warn"> 
+      <button (click)="deleteClient()" mat-raised-button color="warn"> 
         <mat-icon> delete_forever </mat-icon>
         Eliminar 
       </button>

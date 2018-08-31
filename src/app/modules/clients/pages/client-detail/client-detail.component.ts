@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../../../../shared/services/client.service';
 import { Client } from '../../../../shared/models/Client';
 import { Location } from '@angular/common';
+import { ButtonBackComponent } from '../../../../shared/components/button-back/button-back.component';
 
 @Component({
   selector: 'app-client-detail',
@@ -13,6 +14,9 @@ export class ClientDetailComponent implements OnInit {
 
   public id : number;
   public client : Client;
+
+  @ViewChild('btnBack')
+  private btnBack : ButtonBackComponent;
 
   constructor(private route : ActivatedRoute, private clientService : ClientService, private location : Location) { }
 
@@ -40,6 +44,13 @@ export class ClientDetailComponent implements OnInit {
         () => this.location.back()
       );
     console.log(this.client);
+  }
+
+  public deleteClient() {
+    this.clientService.deleteClient(this.client.id)
+      .subscribe(
+        () => this.btnBack.goBack()
+      );
   }
 
 
