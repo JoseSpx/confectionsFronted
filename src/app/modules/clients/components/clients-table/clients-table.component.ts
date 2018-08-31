@@ -48,4 +48,8 @@ export class ClientsTableComponent implements OnInit {
     this.router.navigate(['/clientes/', id]);
   }
 
+  public applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
 }
