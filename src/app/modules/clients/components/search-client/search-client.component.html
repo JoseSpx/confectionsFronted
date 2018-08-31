@@ -2,19 +2,23 @@
   <div class="row">
       <div class="col-8">
           <mat-form-field class="search-client">
-              <input matInput [placeholder]="placeholder" value="Jose">
+              <input matInput [placeholder]="placeholder" name="value" [(ngModel)]="value">
           </mat-form-field>
       </div>
       <div class="col-4 d-flex">
           <mat-radio-group class="d-flex flex-direction-row justify-content-center align-items-center">
-              <mat-radio-button (change)="onChange($event)" class="ml-5" color="primary" value="lastname">Apellidos</mat-radio-button>
-              <mat-radio-button (change)="onChange($event)" checked class="ml-4" color="primary" value="dni">DNI</mat-radio-button>
+              <mat-radio-button (change)="onChange($event)" class="ml-5" color="primary" value="lastname">
+                  Apellidos
+                </mat-radio-button>
+              <mat-radio-button (change)="onChange($event)" checked class="ml-4" color="primary" value="dni">
+                  DNI
+            </mat-radio-button>
           </mat-radio-group>              
       </div>
   </div>
   <div class="row">
       <div class="col-2">
-          <button mat-raised-button color="primary">Buscar</button>
+          <button (click)="search()" mat-raised-button color="primary">Buscar</button>
       </div>
   </div>
 </form>

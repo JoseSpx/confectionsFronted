@@ -56,6 +56,20 @@ export class ClientService {
       );
   }
 
+  public searchByLastNameClient(lastName : string) {
+    return this.http.get<Client[]>(API_URL + URL_CONTROLLER + "?lastname=" + lastName)
+      .pipe(
+        catchError(this.handleError<Client[]>("searchByLastNameClient", []))
+      );
+  }
+
+  public searchByDniClient(dni : string) {
+    return this.http.get<Client[]>(API_URL + URL_CONTROLLER + "?dni=" + dni)
+      .pipe(
+        catchError(this.handleError<Client[]>("searchByDniClient", []))
+      )
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
  
