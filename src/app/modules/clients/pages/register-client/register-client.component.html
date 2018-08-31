@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-12">
-        <app-button-back></app-button-back>
+        <app-button-back #btnBack></app-button-back>
     </div>
   </div> 
   <div class="row mt-3">
@@ -14,19 +14,23 @@
     <div class="col-10">
       <form class="full-width">
           <mat-form-field class="full-width">
-            <input type="text" matInput placeholder="Nombres" value="">
+            <input type="text" matInput placeholder="Nombres" 
+                name="name" [(ngModel)]="client.name">
             <mat-icon matPrefix>edit</mat-icon>
           </mat-form-field>
           <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="Apellidos" value="">
+              <input type="text" matInput placeholder="Apellidos" 
+                name="lastName" [(ngModel)]="client.lastName">
               <mat-icon matPrefix>edit</mat-icon>
           </mat-form-field>
           <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="DNI" value="">
+              <input type="text" matInput placeholder="DNI" 
+                name="dni" [(ngModel)]="client.dni">
               <mat-icon matPrefix>credit_card</mat-icon>
           </mat-form-field>
           <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="Dirección ( opcional )" value="" minlength="1" maxlength="255">
+              <input type="text" matInput placeholder="Dirección ( opcional )"
+                 name="address" [(ngModel)]="client.address" minlength="1" maxlength="255">
               <mat-icon matPrefix>add_location</mat-icon>
           </mat-form-field>
           <!-- <mat-form-field class="full-width">
@@ -35,18 +39,20 @@
           <div class=row>
             <div class="col-6">
               <mat-form-field class="full-width">
-                  <input type="text" matInput placeholder="Teléfono 1" value="">
+                  <input type="text" matInput placeholder="Teléfono 1"
+                    name="phone1" [(ngModel)]="client.phone1">
                   <mat-icon matPrefix>phone</mat-icon>
               </mat-form-field>
             </div>
             <div class="col-6">
               <mat-form-field class="full-width">
-                  <input type="text" matInput placeholder="Teléfono 2 ( opcional )" value="">
+                  <input type="text" matInput placeholder="Teléfono 2 ( opcional )"
+                    name="phone2" [(ngModel)]="client.phone2">
                   <mat-icon matPrefix>contact_phone</mat-icon>
               </mat-form-field>
             </div>
             <div class="col-4 offset-4 mt-3">
-                <button class="full-width" mat-raised-button color="primary"> Registrar Cliente </button>
+                <button (click)="saveClient()" class="full-width" mat-raised-button color="primary"> Registrar Cliente </button>
             </div>
           </div>
       </form>          

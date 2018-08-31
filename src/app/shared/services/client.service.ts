@@ -35,7 +35,14 @@ export class ClientService {
       );
   }
 
-  public updateClient(id : number, client : Client) {
+  public saveClient(client : Client) : Observable<Client> {
+    return this.http.post<Client>(API_URL + URL_CONTROLLER, client, httpOptions)
+      .pipe(
+        catchError(this.handleError<Client>("save client"))
+      );
+  }
+
+  public updateClient(id : number, client : Client) : Observable<any> {
     return this.http.patch(API_URL + URL_CONTROLLER + "/" + id, client, httpOptions)
       .pipe(
         catchError(this.handleError<any>("update Client"))
