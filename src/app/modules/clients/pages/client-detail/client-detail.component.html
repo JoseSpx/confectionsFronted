@@ -22,19 +22,19 @@
       <div class="col-10">
         <form class="full-width">
             <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="Nombres" value="">
+              <input type="text" matInput placeholder="Nombres" [value]="client.name">
               <mat-icon matPrefix>edit</mat-icon>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="Apellidos" value="">
+                <input type="text" matInput placeholder="Apellidos" [value]="client.lastName">
                 <mat-icon matPrefix>edit</mat-icon>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="DNI" value="">
+                <input type="text" matInput placeholder="DNI" [value]="client.dni">
                 <mat-icon matPrefix>credit_card</mat-icon>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="Dirección ( opcional )" value="" minlength="1" maxlength="255">
+                <input type="text" matInput placeholder="Dirección ( opcional )" [value]="client.address" minlength="1" maxlength="255">
                 <mat-icon matPrefix>add_location</mat-icon>
             </mat-form-field>
             <!-- <mat-form-field class="full-width">
@@ -43,13 +43,13 @@
             <div class=row>
               <div class="col-6">
                 <mat-form-field class="full-width">
-                    <input type="text" matInput placeholder="Teléfono 1" value="">
+                    <input type="text" matInput placeholder="Teléfono 1" [value]="client.phone1">
                     <mat-icon matPrefix>phone</mat-icon>
                 </mat-form-field>
               </div>
               <div class="col-6">
                 <mat-form-field class="full-width">
-                    <input type="text" matInput placeholder="Teléfono 2 ( opcional )" value="">
+                    <input type="text" matInput placeholder="Teléfono 2 ( opcional )" [value]="client.phone2">
                     <mat-icon matPrefix>contact_phone</mat-icon>
                 </mat-form-field>
               </div>

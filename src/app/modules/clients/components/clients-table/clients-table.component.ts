@@ -28,7 +28,7 @@ export class ClientsTableComponent implements OnInit {
   }
 
   public getClients() {
-      this.clientService.getClients()
+      this.clientService.findAllClients()
        .subscribe(data => {
           this.clients = data;
           this.dataSource = new MatTableDataSource<Client>(this.putNroOrder());
