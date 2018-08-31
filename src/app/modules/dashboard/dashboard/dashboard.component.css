@@ -5,3 +5,29 @@ form{
 .search-client {
     width: 100%;
 }
+
+.img-money {
+    height: 80%;
+}
+
+.title-money {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.body-money {
+    background-color: #eee;
+    border-radius: 0 0 5px 5px;
+    padding: 5px;
+}
+
+.box-title {
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.box-body {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+}
