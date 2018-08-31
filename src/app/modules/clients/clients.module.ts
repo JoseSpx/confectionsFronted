@@ -13,7 +13,8 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ClientsTableComponent } from './components/clients-table/clients-table.component';
 import { MatTableModule } from '@angular/material/table';
 import { ClientDetailComponent } from './pages/client-detail/client-detail.component';
-import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { ClientService } from './../../shared/services/client.service';
 
 @NgModule({
   imports: [
@@ -34,6 +35,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ListAllClientsComponent, 
     ClientsTableComponent, 
     ClientDetailComponent
+  ],
+  providers : [
+    ClientService
   ]
 })
 export class ClientsModule { }
