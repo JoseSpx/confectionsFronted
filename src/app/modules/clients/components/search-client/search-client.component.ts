@@ -1,6 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../../../shared/services/client.service';
 import { Router } from '@angular/router';
+
+declare var swal : any;
 
 @Component({
   selector: 'app-search-client',
@@ -40,10 +43,14 @@ export class SearchClientComponent implements OnInit {
                 this.router.navigateByUrl("/clientes/" + data[0].id)
               }
               else {
-                alert("Cliente no registrado");
+                swal("Cliente no registrado");
               }
             } else {
-              alert("Cliente no registrado");
+              swal({
+                title : "",
+                html : "<h4>Cliente no Registrado</h4>",
+                confirmButtonColor: '#303F9F',
+              });
             }
           }
         );
