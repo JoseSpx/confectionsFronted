@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './modules/dashboard/dashboard/dashboard.component'
 import { MainDashboardComponent as ClientMainDashBoardComponent } from './modules/clients/pages/main-dashboard/main-dashboard.component';
 import { RegisterClientComponent } from './modules/clients/pages/register-client/register-client.component';
+import { ListAllClientsComponent } from './modules/clients/pages/list-all-clients/list-all-clients.component';
+import { ClientDetailComponent } from './modules/clients/pages/client-detail/client-detail.component';
 
 const routes : Routes = [
   { path : '', redirectTo : 'inicio', pathMatch : 'full'},
@@ -12,7 +14,9 @@ const routes : Routes = [
     path : 'clientes', 
     children : [
       { path : '', component : ClientMainDashBoardComponent  },
-      { path : 'registrar', component : RegisterClientComponent }
+      { path : 'registrar', component : RegisterClientComponent },
+      { path : 'listar', component : ListAllClientsComponent },
+      { path : ':id', component : ClientDetailComponent }
     ]
   },
   { path :  '**', redirectTo : 'inicio', pathMatch : 'full'}

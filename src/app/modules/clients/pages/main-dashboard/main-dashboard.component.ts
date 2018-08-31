@@ -29,7 +29,7 @@ export class MainDashboardComponent implements OnInit {
         title : "Ver todos los Clientes",
         imageUrl : "./../../../../assets/img/list.png",
         subtitle : "Lista completa de todos los clientes",
-        detailUrl : "#",
+        detailUrl : "/clientes/listar",
         textButton : "Ver lista"
       }
     ];

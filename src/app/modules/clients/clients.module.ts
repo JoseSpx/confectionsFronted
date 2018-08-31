@@ -8,6 +8,12 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ComponentsModule } from './../../shared/components/components.module';
 import { RegisterClientComponent } from './pages/register-client/register-client.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ListAllClientsComponent } from './pages/list-all-clients/list-all-clients.component';
+import { MatDividerModule } from '@angular/material/divider';
+import { ClientsTableComponent } from './components/clients-table/clients-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { ClientDetailComponent } from './pages/client-detail/client-detail.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   imports: [
@@ -16,8 +22,18 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatRadioModule,
     ComponentsModule,
-    MatIconModule
+    MatIconModule,
+    MatDividerModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
-  declarations: [MainDashboardComponent, SearchClientComponent, RegisterClientComponent]
+  declarations: [
+    MainDashboardComponent, 
+    SearchClientComponent, 
+    RegisterClientComponent, 
+    ListAllClientsComponent, 
+    ClientsTableComponent, 
+    ClientDetailComponent
+  ]
 })
 export class ClientsModule { }
