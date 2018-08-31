@@ -3,6 +3,7 @@ import { Client } from '../models/Client';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { API_URL } from '../config/config';
+import { catchError, map, tap } from 'rxjs/operators';
 
 const URL_CONTROLLER : string = "/clients"; 
 
@@ -21,11 +22,43 @@ export class ClientService {
   constructor(private http : HttpClient) { }
 
   public findAllClients() : Observable<Client[]> {
-    return this.http.get<Client[]>( API_URL + URL_CONTROLLER );
+    return this.http.get<Client[]>( API_URL + URL_CONTROLLER )
+      .pipe(
+        catchError(this.handleError('findAllClients', [] ))
+      );
   }
 
   public findClientByID(id : number) :Observable<Client> {
-    return this.http.get<Client>(API_URL + URL_CONTROLLER + "/" + id);
+    return this.http.get<Client>(API_URL + URL_CONTROLLER + "/" + id)
+      .pipe(
+        catchError(this.handleError<Client>("find Client By ID : " + id))
+      );
   }
+
+  public updateClient(id : number, client : Client) {
+    return this.http.patch(API_URL + URL_CONTROLLER + "/" + id, client, httpOptions)
+      .pipe(
+        catchError(this.handleError<any>("update Client"))
+      );
+  }
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+ 
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+ 
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+ 
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+
+    /** Log a HeroService message with the MessageService */
+    private log(message: string) {
+      console.log(message);
+    }
 
 }

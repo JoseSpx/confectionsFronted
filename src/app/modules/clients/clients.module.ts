@@ -15,6 +15,8 @@ import { MatTableModule } from '@angular/material/table';
 import { ClientDetailComponent } from './pages/client-detail/client-detail.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { ClientService } from './../../shared/services/client.service';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -26,7 +28,9 @@ import { ClientService } from './../../shared/services/client.service';
     MatIconModule,
     MatDividerModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressBarModule,
+    FormsModule
   ],
   declarations: [
     MainDashboardComponent, 
