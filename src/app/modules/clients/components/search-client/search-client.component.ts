@@ -43,7 +43,11 @@ export class SearchClientComponent implements OnInit {
                 this.router.navigateByUrl("/clientes/" + data[0].id)
               }
               else {
-                swal("Cliente no registrado");
+                swal({
+                  title : "",
+                  html : "<h4> Ingrese el DNI </h4>",
+                  confirmButtonColor: '#303F9F',
+                });
               }
             } else {
               swal({
