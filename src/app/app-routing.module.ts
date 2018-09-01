@@ -6,6 +6,7 @@ import { MainDashboardComponent as ClientMainDashBoardComponent } from './module
 import { RegisterClientComponent } from './modules/clients/pages/register-client/register-client.component';
 import { ListAllClientsComponent } from './modules/clients/pages/list-all-clients/list-all-clients.component';
 import { ClientDetailComponent } from './modules/clients/pages/client-detail/client-detail.component';
+import { MainDashboardComponent as ClothesMainComponent  } from './modules/clothes/pages/main-dashboard/main-dashboard.component';
 
 const routes : Routes = [
   { path : '', redirectTo : 'inicio', pathMatch : 'full'},
@@ -19,6 +20,7 @@ const routes : Routes = [
       { path : ':id', component : ClientDetailComponent }
     ]
   },
+  { path : 'ropa', component : ClothesMainComponent },
   { path :  '**', redirectTo : 'inicio', pathMatch : 'full'}
 ]
 

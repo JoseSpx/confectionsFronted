@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { ComponentsModule } from './shared/components/components.module';
+import { ClothesModule } from './modules/clothes/clothes.module';
 import { ClientsModule } from './modules/clients/clients.module';
 import { HttpClientModule }    from '@angular/common/http';
 
@@ -18,7 +19,8 @@ import { HttpClientModule }    from '@angular/common/http';
     DashboardModule,
     ComponentsModule,
     ClientsModule,
-    HttpClientModule
+    HttpClientModule,
+    ClothesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
