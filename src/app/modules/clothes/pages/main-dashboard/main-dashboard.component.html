@@ -58,7 +58,7 @@
                   
                   
             </div>
-            <div class="col-6" *ngIf="state == 1 || state == 2">
+            <div class="col-12 col-lg-6" *ngIf="state == 1 || state == 2">
                 <mat-card class="example-card">
                     <mat-card-header>
                       <mat-card-title> {{ title }} </mat-card-title>
@@ -76,6 +76,11 @@
                     </mat-card-actions>
                   </mat-card>
                   
+            </div>
+            <div class="col-lg-6" *ngIf="state == 0">
+              <div class="image">
+                <img class="img-fluid" src="../../../../../assets/img/man2.png"> 
+              </div>
             </div>
         </div>
     </div>
