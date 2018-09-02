@@ -12,7 +12,7 @@ import { ClientService } from '../../../../shared/services/client.service';
 })
 export class ClientsTableComponent implements OnInit {
 
-  public displayedColumns: string[] = ['nro', 'name', 'lastName', 'dni', 'phone1', 'edit', 'orders'];
+  public displayedColumns: string[] = ['nro', 'name', 'lastName', 'dni', 'phone1', 'edit', 'measures'];
   public dataSource;
   public clients : Client[];
 
@@ -46,6 +46,11 @@ export class ClientsTableComponent implements OnInit {
 
   public goClientDetail(id : number) {
     this.router.navigate(['/clientes/', id]);
+  }
+
+  public goClientMeasures(id : number) {console.log("medida");
+    let url : string = "/clientes/" + id + "/medidas";
+    this.router.navigateByUrl(url);
   }
 
   public applyFilter(filterValue: string) {

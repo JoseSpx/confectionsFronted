@@ -18,6 +18,8 @@ import { ClientService } from './../../shared/services/client.service';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ClientMeasuresComponent } from './pages/client-measures/client-measures.component';
+import { ClientMeasuresTableComponent } from './components/client-measures-table/client-measures-table.component';
 
 @NgModule({
   imports: [
@@ -40,7 +42,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     RegisterClientComponent, 
     ListAllClientsComponent, 
     ClientsTableComponent, 
-    ClientDetailComponent
+    ClientDetailComponent,
+    ClientMeasuresComponent,
+    ClientMeasuresTableComponent
   ],
   providers : [
     ClientService
