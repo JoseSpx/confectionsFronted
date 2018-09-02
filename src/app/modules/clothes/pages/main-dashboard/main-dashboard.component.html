@@ -1,16 +1,86 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-12">
       <h4> Sección de Ropa </h4>
       <hr>
     </div>
   </div>
-  <div class="row">
-    <div class="col-4">
-      
+  <div class="row mt-3">
+    <div class="col-6">
+        <button mat-raised-button color="primary" (click)="new()"> Nueva Prenda </button>
     </div>
-    <div class="col-8">
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
+        <div class="row">
+            <div class="col-6">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 full-width">
 
+                    <!--- Note that these columns can be defined in any order.
+                          The actual rendered columns are set as a property on the row definition" -->
+                  
+                    <!-- Position Column -->
+                    <ng-container matColumnDef="Nro">
+                      <th mat-header-cell *matHeaderCellDef> Nro. </th>
+                      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    </ng-container>
+                  
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="name">
+                      <th mat-header-cell *matHeaderCellDef> Name </th>
+                      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                    </ng-container>
+                  
+                    <!-- Edit Column -->
+                    <ng-container matColumnDef="edit">
+                      <th mat-header-cell *matHeaderCellDef> Editar </th>
+                      <td mat-cell *matCellDef="let element"> 
+                          <button mat-raised-button class="edit" (click)="edit(element)">
+                              <mat-icon> edit </mat-icon>
+                          </button>  
+                      </td>
+                    </ng-container>
+                  
+                    <!-- Edit Column -->
+                    <ng-container matColumnDef="delete">
+                        <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+                        <td mat-cell *matCellDef="let element"> 
+                            <button mat-raised-button color="warn" (click)="delete(element.id)">
+                                <mat-icon> delete </mat-icon>
+                            </button>  
+                        </td>
+                    </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  
+                  </table>
+                  
+                  
+            </div>
+            <div class="col-6" *ngIf="state == 1 || state == 2">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <mat-card-title> {{ title }} </mat-card-title>
+                    </mat-card-header>
+                     <mat-card-content>
+                        <form class="example-form">
+                            <mat-form-field class="full-width">
+                                <input matInput placeholder="Nombre de la Prenda" name="name" [(ngModel)]="clothesSelected.name">
+                              </mat-form-field>
+                          </form>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button mat-button (click)="accept()"> {{ this.btnText }} </button>
+                      <button mat-button (click)="cancel()"> Cancelar </button>
+                    </mat-card-actions>
+                  </mat-card>
+                  
+            </div>
+        </div>
     </div>
+    <!-- <div class="col-5 offset-3">
+      <app-table-type-clothes></app-table-type-clothes>
+    </div> -->
   </div>
 </div>
