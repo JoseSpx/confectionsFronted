@@ -8,6 +8,6 @@ export interface Measure {
     title : string;
     comment : string;
     client : Client;
-    clothe : Clothe;
+    clothes : Clothe;
 
 }

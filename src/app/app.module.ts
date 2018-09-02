@@ -9,6 +9,10 @@ import { ClothesModule } from './modules/clothes/clothes.module';
 import { ClientsModule } from './modules/clients/clients.module';
 import { HttpClientModule }    from '@angular/common/http';
 
+import {  MatPaginatorIntl } from '@angular/material';
+import { getDutchPaginatorIntl } from './modules/clients/components/client-measures-table/dutch-paginator-intl';
+
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,7 +26,9 @@ import { HttpClientModule }    from '@angular/common/http';
     HttpClientModule,
     ClothesModule
   ],
-  providers: [],
+  providers: [
+    { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
