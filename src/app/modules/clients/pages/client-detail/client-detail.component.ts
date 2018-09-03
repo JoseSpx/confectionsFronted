@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClientService } from '../../../../shared/services/client.service';
 import { Client } from '../../../../shared/models/Client';
 import { Location } from '@angular/common';
@@ -20,7 +20,11 @@ export class ClientDetailComponent implements OnInit {
   @ViewChild('btnBack')
   private btnBack : ButtonBackComponent;
 
-  constructor(private route : ActivatedRoute, private clientService : ClientService, private location : Location) { }
+  constructor(
+    private route : ActivatedRoute,
+    private router : Router,
+    private clientService : ClientService, 
+    private location : Location) { }
 
   ngOnInit() {
     this.id = this.getID();
@@ -87,6 +91,16 @@ export class ClientDetailComponent implements OnInit {
       }
       
     })
+  }
+
+  public goToMeasureClient () {
+    let url : string = "/clientes/" + this.id + "/medidas";
+    this.router.navigateByUrl(url);
+  }
+
+  public goOrderClient() {
+    let url : string = "/clientes/" + this.id + "/pedidos";
+    this.router.navigateByUrl(url);
   }
 
 
