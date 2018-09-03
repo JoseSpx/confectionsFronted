@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ClientService } from '../../../../shared/services/client.service';
 import { Client } from '../../../../shared/models/Client';
 import { ActivatedRoute } from '@angular/router';
@@ -6,6 +6,7 @@ import { ClothesService } from '../../../../shared/services/clothes.service';
 import { Clothe } from '../../../../shared/models/Clothe';
 import { Measure } from '../../../../shared/models/Measure';
 import { MeasureService } from '../../../../shared/services/measure.service';
+import { ButtonBackComponent } from '../../../../shared/components/button-back/button-back.component';
 
 @Component({
   selector: 'app-new-measure',
@@ -20,6 +21,9 @@ export class NewMeasureComponent implements OnInit {
   public clothesSelected : Clothe;
   public title : string = "";
   public comment : string = "";
+
+  @ViewChild('btnBack')
+  private btnBack : ButtonBackComponent;
 
   constructor(
     private clientService : ClientService,
@@ -49,7 +53,12 @@ export class NewMeasureComponent implements OnInit {
         clothes : this.clothesSelected
       }
 
-
+      this.measureService.save(measure)
+        .subscribe(
+          () => {
+            this.btnBack.goBack();
+          }
+        );
 
     }
 
