@@ -1,0 +1,23 @@
+<div class="container-fluid" *ngIf="client">
+    <div class="row">
+      <div class="col-12">
+        <app-button-back></app-button-back>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <h4> Editar Pedido </h4>
+        <hr>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-12">
+        <b>Cliente :</b> {{ client.name }} {{ client.lastName }}
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <app-form-order [client]="client"></app-form-order>
+      </div>
+    </div>
+  </div>

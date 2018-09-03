@@ -50,9 +50,9 @@ export class ClientOrdersTableComponent implements OnInit {
     return orderList;
   }
 
-  public edit(id : number) {
-    let url : string = "/cliente/pedidos/" + id; // fix
-    this.router.navigateByUrl(url);
+  public editOrder(idClient : number, idOrder : number) {
+    // console.log(idClient + " - " + idOrder);
+    this.router.navigateByUrl("/clientes/" + idClient + "/pedidos/" + idOrder);
   }
 
 }

@@ -7,6 +7,7 @@ import { MatIconModule, MatInputModule, MatFormFieldModule, MatButtonModule, Mat
 import { FormOrderComponent } from './components/form-order/form-order.component';
 import { FormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { EditOrderComponent } from './pages/edit-order/edit-order.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
   ],
   declarations: [
     NewOrderComponent,
-    FormOrderComponent
+    FormOrderComponent,
+    EditOrderComponent
   ]
 })
 export class OrdersModule { }
