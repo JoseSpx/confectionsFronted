@@ -1,5 +1,5 @@
 import { Component, OnInit , Inject} from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DialogComponent } from '../../components/dialog/dialog.component';
 import { ClothesService } from '../../../../shared/services/clothes.service';
 import { Clothe } from '../../../../shared/models/Clothe';

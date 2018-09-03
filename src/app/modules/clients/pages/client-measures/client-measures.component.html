@@ -22,22 +22,9 @@
         </button>
     </div>
   </div>
-  <div class="row mt-4" *ngIf="state == 0">
-    <div class="col-12">
-      <form class="example-form">
-        <mat-form-field class="full-width">
-          <input matInput placeholder="Favorite food" value="Sushi" maxlength="100">
-        </mat-form-field>
-      
-        <mat-form-field class="full-width">
-          <textarea matInput placeholder="Leave a comment" maxlength="254"></textarea>
-        </mat-form-field>
-      </form>
-    </div>  
-  </div>
   <div class="row mt-4">
     <div class="col-12">
-      <app-client-measures-table></app-client-measures-table>
+      <app-client-measures-table [clientId]="client.id"></app-client-measures-table>
     </div>
   </div>
 </div>
