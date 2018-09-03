@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../../../shared/services/client.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Client } from '../../../../shared/models/Client';
 
 @Component({
@@ -15,7 +15,8 @@ export class ClientOrderComponent implements OnInit {
 
   constructor(
     private route : ActivatedRoute,
-    private clientService : ClientService
+    private clientService : ClientService,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -33,6 +34,10 @@ export class ClientOrderComponent implements OnInit {
       .subscribe(
         data => this.client = data
       )
+  }
+
+  public newOrder(id : number) {
+    this.router.navigateByUrl("/clientes/" + id + "/pedidos/nuevo");
   }
 
 }

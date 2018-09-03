@@ -11,6 +11,7 @@ import { ClientMeasuresComponent } from './modules/clients/pages/client-measures
 import { NewMeasureComponent } from './modules/clients/pages/new-measure/new-measure.component';
 import { EditMeasureComponent } from './modules/clients/pages/edit-measure/edit-measure.component';
 import { ClientOrderComponent } from './modules/clients/pages/client-order/client-order.component';
+import { NewOrderComponent } from './modules/orders/pages/new-order/new-order.component';
 
 const routes : Routes = [
   { path : '', redirectTo : 'inicio', pathMatch : 'full'},
@@ -33,7 +34,8 @@ const routes : Routes = [
       { 
          path : ':id/pedidos',
          children : [
-           { path : '', component : ClientOrderComponent }
+           { path : '', component : ClientOrderComponent },
+           { path : 'nuevo', component : NewOrderComponent }
          ]
       }
     ]

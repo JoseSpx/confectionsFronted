@@ -35,7 +35,7 @@ export class ClientMeasuresTableComponent implements OnInit {
     this.measureService.findAllByClientId(id)
       .subscribe(
         data => {
-          console.log(data);
+          // console.log(data);
           this.dataSource = new MatTableDataSource<Measure>(this.insertPositions(data));
           this.dataSource.paginator = this.paginator;
         }

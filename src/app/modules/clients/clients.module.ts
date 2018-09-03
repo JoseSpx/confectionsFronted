@@ -28,6 +28,7 @@ import { EditMeasureComponent } from './pages/edit-measure/edit-measure.componen
 import { ClientOrderComponent } from './pages/client-order/client-order.component';
 import { ClientOrdersTableComponent } from './components/client-orders-table/client-orders-table.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { OrderService } from '../../shared/services/order.service';
 
 @NgModule({
   imports: [
@@ -67,7 +68,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
   ],
   providers : [
     ClientService,
-    MeasureService
+    MeasureService,
+    OrderService
   ]
 })
 export class ClientsModule { }

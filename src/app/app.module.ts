@@ -11,6 +11,7 @@ import { HttpClientModule }    from '@angular/common/http';
 
 import {  MatPaginatorIntl } from '@angular/material';
 import { getDutchPaginatorIntl } from './modules/clients/components/client-measures-table/dutch-paginator-intl';
+import { OrdersModule } from './modules/orders/orders.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { getDutchPaginatorIntl } from './modules/clients/components/client-measu
     ComponentsModule,
     ClientsModule,
     HttpClientModule,
-    ClothesModule
+    ClothesModule,
+    OrdersModule
   ],
   providers: [
     { provide: MatPaginatorIntl, useValue: getDutchPaginatorIntl() }

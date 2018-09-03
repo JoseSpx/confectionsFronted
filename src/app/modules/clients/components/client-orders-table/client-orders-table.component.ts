@@ -1,5 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Client } from '../../../../shared/models/Client';
+import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { Router } from '@angular/router';
+import { OrderService } from '../../../../shared/services/order.service';
+import { Order } from '../../../../shared/models/Order';
 
 @Component({
   selector: 'app-client-orders-table',
@@ -8,15 +12,47 @@ import { Client } from '../../../../shared/models/Client';
 })
 export class ClientOrdersTableComponent implements OnInit {
 
-  public displayedColumns: string[] = ['position', 'date_dial', 'date_trial', 'date_delivery', 'comment','edit'];
+
+  public displayedColumns: string[] = ['position', 'date_deal', 'date_trial', 'date_delivery', 'comment','edit'];
   public dataSource;
 
   @Input()
   public client : Client;
 
-  constructor() { }
+  @ViewChild(MatPaginator)
+  public paginator: MatPaginator;
+
+  constructor(
+    private orderService : OrderService,
+    private router : Router
+  ) { }
 
   ngOnInit() {
+    this.findAllMeasureById(this.client.id);
+  }
+
+  public findAllMeasureById(id : number) {
+    this.orderService.findAllByClientId(id)
+      .subscribe(
+        data => {
+          console.log(data);
+          this.dataSource = new MatTableDataSource<Order>(this.insertPositions(data));
+          this.dataSource.paginator = this.paginator;
+        }
+      )
+  }
+
+  public insertPositions(orderList : Order []) {
+    let i = 0;
+    for(let m of orderList) {
+      m.position = ++i;
+    }
+    return orderList;
+  }
+
+  public edit(id : number) {
+    let url : string = "/cliente/pedidos/" + id; // fix
+    this.router.navigateByUrl(url);
   }
 
 }
