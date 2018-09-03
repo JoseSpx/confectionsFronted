@@ -15,6 +15,12 @@ export class FormOrderComponent implements OnInit {
   @Input()
   public client : Client;
 
+  @Input()
+  public order : Order;
+
+  private state : number; // 0 = create , 1 = update
+
+  /*
   public order : Order = {
     dateDeal : '',
     dateTrial : '',
@@ -25,6 +31,7 @@ export class FormOrderComponent implements OnInit {
     comment : '',
     client : null
   };
+  */
 
   constructor(
     private orderService : OrderService,
@@ -32,6 +39,25 @@ export class FormOrderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getState();
+  }
+
+  public getState() {
+    if (this.order.id == null) {
+      this.state = 0;
+    } else {
+      this.state = 1;
+    }
+  }
+
+  public onClickBtn() {
+    if (this.state == 0) {
+      //alert("nuevo");
+      this.save();
+    } else {
+      // alert("actualizar");
+      this.update();
+    }
   }
 
   public save() {
@@ -41,5 +67,13 @@ export class FormOrderComponent implements OnInit {
         () => this.location.back()
       )
   }
+
+  public update() {
+    this.order.client = this.client;
+    this.orderService.update(this.order.id, this.order)
+      .subscribe(
+        () => this.location.back()
+      )
+  }  
 
 }

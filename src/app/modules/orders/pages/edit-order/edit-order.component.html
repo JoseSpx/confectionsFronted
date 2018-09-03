@@ -1,4 +1,4 @@
-<div class="container-fluid" *ngIf="client">
+<div class="container-fluid" *ngIf="client && order">
     <div class="row">
       <div class="col-12">
         <app-button-back></app-button-back>
@@ -17,7 +17,7 @@
     </div>
     <div class="row mt-4">
       <div class="col-12">
-        <app-form-order [client]="client"></app-form-order>
+        <app-form-order [client]="client" [order]="order"></app-form-order>
       </div>
     </div>
   </div>

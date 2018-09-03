@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row" *ngIf="client && order">
   <div class="col-8">
     <form class="full-width">
 
@@ -41,7 +41,7 @@
 
       <div class=row>
         <div class="col-4 offset-4 mt-3">
-            <button (click)="save()" class="full-width" mat-raised-button color="primary"> Registrar Pedido </button>
+            <button (click)="onClickBtn()" class="full-width" mat-raised-button color="primary"> Registrar Pedido </button>
         </div>
       </div>
     </form>          
