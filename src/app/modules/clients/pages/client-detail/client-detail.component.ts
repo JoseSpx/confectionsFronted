@@ -41,6 +41,24 @@ export class ClientDetailComponent implements OnInit {
   }
 
   public updateClient() {
+
+    this.client.name = this.client.name.trim();
+    this.client.lastName = this.client.lastName.trim();
+    this.client.address = this.client.address.trim();
+    this.client.dni = this.client.dni.trim();
+    this.client.phone1 = this.client.phone1.trim();
+    this.client.phone2 = this.client.phone2.trim();
+
+    if (this.client.name == "" || this.client.dni == "" || this.client.lastName == "") {
+      swal({
+        title : "",
+        html : "<h4> Complete los campos obligatorios </h4>",
+        confirmButtonColor: '#303F9F',
+        });
+
+        return;
+    }
+
     this.clientService.updateClient(this.client.id, this.client)
       .subscribe(
         () => this.location.back()

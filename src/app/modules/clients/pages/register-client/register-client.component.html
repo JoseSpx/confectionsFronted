@@ -11,25 +11,25 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-10">
+    <div class="col-8">
       <form class="full-width">
           <mat-form-field class="full-width">
-            <input type="text" matInput placeholder="Nombres" 
+            <input type="text" matInput placeholder="Nombres*" maxlength="254"
                 name="name" [(ngModel)]="client.name">
             <mat-icon matPrefix>edit</mat-icon>
           </mat-form-field>
           <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="Apellidos" 
+              <input type="text" matInput placeholder="Apellidos*" maxlength="254" 
                 name="lastName" [(ngModel)]="client.lastName">
               <mat-icon matPrefix>edit</mat-icon>
           </mat-form-field>
           <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="DNI" 
+              <input type="text" matInput placeholder="DNI*" maxlength="254"
                 name="dni" [(ngModel)]="client.dni">
               <mat-icon matPrefix>credit_card</mat-icon>
           </mat-form-field>
           <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="Dirección ( opcional )"
+              <input type="text" matInput placeholder="Dirección"
                  name="address" [(ngModel)]="client.address" minlength="1" maxlength="255">
               <mat-icon matPrefix>add_location</mat-icon>
           </mat-form-field>
@@ -39,14 +39,14 @@
           <div class=row>
             <div class="col-6">
               <mat-form-field class="full-width">
-                  <input type="text" matInput placeholder="Teléfono 1"
+                  <input type="text" matInput placeholder="Teléfono 1" maxlength="254"
                     name="phone1" [(ngModel)]="client.phone1">
                   <mat-icon matPrefix>phone</mat-icon>
               </mat-form-field>
             </div>
             <div class="col-6">
               <mat-form-field class="full-width">
-                  <input type="text" matInput placeholder="Teléfono 2 ( opcional )"
+                  <input type="text" matInput placeholder="Teléfono 2" maxlength="254"
                     name="phone2" [(ngModel)]="client.phone2">
                   <mat-icon matPrefix>contact_phone</mat-icon>
               </mat-form-field>
@@ -56,6 +56,11 @@
             </div>
           </div>
       </form>          
+    </div>
+    <div class="col-4 d-flex justify-content-center align-items-center">
+      <div>
+        <img class="img-fluid" src="./../../../../../assets/img/man2.png" alt="">
+      </div>
     </div>
   </div>
 </div>

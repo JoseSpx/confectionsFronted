@@ -10,6 +10,7 @@ import { MainDashboardComponent as ClothesMainComponent  } from './modules/cloth
 import { ClientMeasuresComponent } from './modules/clients/pages/client-measures/client-measures.component';
 import { NewMeasureComponent } from './modules/clients/pages/new-measure/new-measure.component';
 import { EditMeasureComponent } from './modules/clients/pages/edit-measure/edit-measure.component';
+import { ClientOrderComponent } from './modules/clients/pages/client-order/client-order.component';
 
 const routes : Routes = [
   { path : '', redirectTo : 'inicio', pathMatch : 'full'},
@@ -28,7 +29,13 @@ const routes : Routes = [
           { path : 'nuevo', component : NewMeasureComponent },
           { path : ':idmeasure', component : EditMeasureComponent }
         ]
-       }
+       },
+      { 
+         path : ':id/pedidos',
+         children : [
+           { path : '', component : ClientOrderComponent }
+         ]
+      }
     ]
   },
   { path : 'ropa', component : ClothesMainComponent },

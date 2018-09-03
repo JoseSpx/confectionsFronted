@@ -8,6 +8,8 @@ import { Measure } from '../../../../shared/models/Measure';
 import { MeasureService } from '../../../../shared/services/measure.service';
 import { ButtonBackComponent } from '../../../../shared/components/button-back/button-back.component';
 
+declare var swal : any;
+
 @Component({
   selector: 'app-new-measure',
   templateUrl: './new-measure.component.html',
@@ -44,7 +46,12 @@ export class NewMeasureComponent implements OnInit {
     this.comment = this.comment.trim();
 
     if (this.title == "" || this.comment == "") {
-      alert("Campos vacios");
+      swal({
+        title : "",
+        html : "<h4> Existen campos vacios </h4>",
+        confirmButtonColor: '#303F9F',
+      });
+
     } else {
       let measure : Measure = {
         title : this.title,

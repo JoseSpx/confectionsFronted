@@ -14,7 +14,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-10 d-flex justify-content-end">
+    <div class="col-8 d-flex justify-content-end">
       <button (click)="deleteClient()" mat-raised-button color="warn"> 
         <mat-icon> delete_forever </mat-icon>
         Eliminar 
@@ -22,22 +22,26 @@
     </div>
   </div>
   <div class="row">
-      <div class="col-10">
+      <div class="col-8">
         <form class="full-width">
             <mat-form-field class="full-width">
-              <input type="text" matInput placeholder="Nombres" name="name" [(ngModel)]="client.name">
+              <input type="text" matInput placeholder="Nombres*" name="name" maxlength="254"
+                 [(ngModel)]="client.name">
               <mat-icon matPrefix>edit</mat-icon>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="Apellidos" name="lastName" [(ngModel)]="client.lastName">
+                <input type="text" matInput placeholder="Apellidos*" name="lastName" maxlength="254"
+                 [(ngModel)]="client.lastName">
                 <mat-icon matPrefix>edit</mat-icon>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="DNI" name="dni" [(ngModel)]="client.dni">
+                <input type="text" matInput placeholder="DNI*" name="dni" maxlength="254"
+                [(ngModel)]="client.dni">
                 <mat-icon matPrefix>credit_card</mat-icon>
             </mat-form-field>
             <mat-form-field class="full-width">
-                <input type="text" matInput placeholder="Dirección ( opcional )" name="address" [(ngModel)]="client.address" minlength="1" maxlength="255">
+                <input type="text" matInput placeholder="Dirección ( opcional )" maxlength="254"
+                 name="address" [(ngModel)]="client.address" minlength="1" maxlength="255">
                 <mat-icon matPrefix>add_location</mat-icon>
             </mat-form-field>
             <!-- <mat-form-field class="full-width">
@@ -46,13 +50,15 @@
             <div class=row>
               <div class="col-6">
                 <mat-form-field class="full-width">
-                    <input type="text" matInput placeholder="Teléfono 1" name="phone1" [(ngModel)]="client.phone1">
+                    <input type="text" matInput placeholder="Teléfono 1" name="phone1" maxlength="254"
+                     [(ngModel)]="client.phone1">
                     <mat-icon matPrefix>phone</mat-icon>
                 </mat-form-field>
               </div>
               <div class="col-6">
                 <mat-form-field class="full-width">
-                    <input type="text" matInput placeholder="Teléfono 2 ( opcional )" name="phone2" [(ngModel)]="client.phone2">
+                    <input type="text" matInput placeholder="Teléfono 2 ( opcional )" maxlength="254"
+                     name="phone2" [(ngModel)]="client.phone2">
                     <mat-icon matPrefix>contact_phone</mat-icon>
                 </mat-form-field>
               </div>
@@ -62,5 +68,10 @@
             </div>
         </form>          
       </div>
+      <div class="col-4 d-flex justify-content-center align-items-center">
+            <div>
+              <img class="img-fluid" src="./../../../../../assets/img/man2.png" alt="">
+            </div>
+          </div>
   </div>
 </div>

@@ -1,0 +1,32 @@
+<div class="container-fluid" *ngIf="client">
+    <div class="row">
+      <div class="col-12">
+        <app-button-back></app-button-back>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <h4> Sección de Pedidos del Cliente </h4>
+        <hr>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-12">
+        <b>Cliente :</b> {{ client.name }} {{ client.lastName }}
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-12">
+          <button mat-raised-button color="primary" (click)="newMeasure()">
+            <mat-icon> add </mat-icon>
+            Agregar nuevo pedido
+          </button>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-12">
+        <app-client-orders-table [client]="client"></app-client-orders-table>
+      </div>
+    </div>
+  </div>
+  

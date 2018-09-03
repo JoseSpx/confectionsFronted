@@ -42,7 +42,11 @@ export class EditMeasureComponent implements OnInit {
     this.measure.comment = this.measure.comment.trim();
 
     if (this.measure.title == "" || this.measure.comment == "") {
-      alert("Campos vacios");
+      swal({
+        title : "",
+        html : "<h4> Existen campos vacios </h4>",
+        confirmButtonColor: '#303F9F',
+      });
     } else {
 
       let measure : Measure = {

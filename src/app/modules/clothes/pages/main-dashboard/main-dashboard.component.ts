@@ -75,12 +75,6 @@ export class MainDashboardComponent implements OnInit {
         .subscribe(
           () => { 
             this.findAllClothes();
-            swal({
-              title: 'Eliminado !',
-              text : 'La prenda fue eliminada exitosamente',
-              type : 'success',
-              confirmButtonColor: '#303F9F',
-            })
           }
       );
       }
@@ -105,6 +99,20 @@ export class MainDashboardComponent implements OnInit {
   }
 
   public accept() {
+
+    this.clothesSelected.name = this.clothesSelected.name.trim();
+
+    if (this.clothesSelected.name == "") {
+      swal({
+        title : "",
+        html : "<h4> Existen campos vacios </h4>",
+        confirmButtonColor: '#303F9F',
+      });
+
+      return;
+    }
+
+
     if (this.state == 1) {
       this.clothesService.updateClothes(this.clothesSelected.id, this.clothesSelected)
         .subscribe(

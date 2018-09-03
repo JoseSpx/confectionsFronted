@@ -25,6 +25,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { NewMeasureComponent } from './pages/new-measure/new-measure.component';
 import { MeasureService } from '../../shared/services/measure.service';
 import { EditMeasureComponent } from './pages/edit-measure/edit-measure.component';
+import { ClientOrderComponent } from './pages/client-order/client-order.component';
+import { ClientOrdersTableComponent } from './components/client-orders-table/client-orders-table.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   imports: [
@@ -40,7 +43,8 @@ import { EditMeasureComponent } from './pages/edit-measure/edit-measure.componen
     MatProgressBarModule,
     FormsModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule
     //DialogOverviewExampleDialog
   ],
   declarations: [
@@ -54,7 +58,9 @@ import { EditMeasureComponent } from './pages/edit-measure/edit-measure.componen
     ClientMeasuresTableComponent,
     DialogComponent,
     NewMeasureComponent,
-    EditMeasureComponent
+    EditMeasureComponent,
+    ClientOrderComponent,
+    ClientOrdersTableComponent
   ],
   entryComponents : [
     DialogComponent

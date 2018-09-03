@@ -3,6 +3,8 @@ import { ClientService } from '../../../../shared/services/client.service';
 import { Client } from '../../../../shared/models/Client';
 import { ButtonBackComponent } from '../../../../shared/components/button-back/button-back.component';
 
+declare var swal : any;
+
 @Component({
   selector: 'app-register-client',
   templateUrl: './register-client.component.html',
@@ -28,6 +30,24 @@ export class RegisterClientComponent implements OnInit {
   }
 
   public saveClient() {
+
+    this.client.name = this.client.name.trim();
+    this.client.lastName = this.client.lastName.trim();
+    this.client.address = this.client.address.trim();
+    this.client.dni = this.client.dni.trim();
+    this.client.phone1 = this.client.phone1.trim();
+    this.client.phone2 = this.client.phone2.trim();
+
+    if (this.client.name == "" || this.client.dni == "" || this.client.lastName == "") {
+      swal({
+        title : "",
+        html : "<h4> Complete los campos obligatorios </h4>",
+        confirmButtonColor: '#303F9F',
+        });
+
+        return;
+    }
+
     this.clientService.saveClient(this.client)
       .subscribe(
         () => this.btnBack.goBack()
