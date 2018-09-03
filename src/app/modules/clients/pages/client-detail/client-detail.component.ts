@@ -5,6 +5,8 @@ import { Client } from '../../../../shared/models/Client';
 import { Location } from '@angular/common';
 import { ButtonBackComponent } from '../../../../shared/components/button-back/button-back.component';
 
+declare var swal : any;
+
 @Component({
   selector: 'app-client-detail',
   templateUrl: './client-detail.component.html',
@@ -47,10 +49,26 @@ export class ClientDetailComponent implements OnInit {
   }
 
   public deleteClient() {
-    this.clientService.deleteClient(this.client.id)
-      .subscribe(
-        () => this.btnBack.goBack()
+    swal({
+      title: 'Está seguro ?',
+      text: "Puede eliminar información muy importante!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#303F9F',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText : 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        this.clientService.deleteClient(this.client.id)
+        .subscribe(
+          () => { 
+            this.btnBack.goBack()
+          }
       );
+      }
+      
+    })
   }
 
 

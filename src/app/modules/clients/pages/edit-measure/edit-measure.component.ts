@@ -8,6 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ClientService } from '../../../../shared/services/client.service';
 import { ClothesService } from '../../../../shared/services/clothes.service';
 
+declare var swal : any;
+
 @Component({
   selector: 'app-edit-measure',
   templateUrl: './edit-measure.component.html',
@@ -43,14 +45,6 @@ export class EditMeasureComponent implements OnInit {
       alert("Campos vacios");
     } else {
 
-      // console.log("CLOTHE SELECTED : ", this.clothesSelected);
-
-      // for (let c of this.clothesList) {
-      //   if (c.id == this.clothesSelected.id) {
-      //     this.measure.clothes = c;
-      //   }
-      // }
-
       let measure : Measure = {
         title : this.measure.title,
         comment : this.measure.comment,
@@ -69,6 +63,29 @@ export class EditMeasureComponent implements OnInit {
 
   }
 
+  public deleteMeasure() {
+    swal({
+      title: 'Está seguro ?',
+      text: "Puede eliminar información muy importante!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#303F9F',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Aceptar',
+      cancelButtonText : 'Cancelar'
+    }).then((result) => {
+      if (result.value) {
+        this.measureService.deleteById(this.idMeasure)
+        .subscribe(
+          () => { 
+            this.btnBack.goBack()
+          }
+      );
+      }
+      
+    })
+
+  }
 
   public getMeasureId() : number {
     let id = +this.route.snapshot.paramMap.get("idmeasure");
