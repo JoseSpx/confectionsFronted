@@ -3,6 +3,7 @@ import { Measure } from '../../../../shared/models/Measure';
 // import { measures } from '../../../../shared/mocks/measures';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { MeasureService } from '../../../../shared/services/measure.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,7 +23,8 @@ export class ClientMeasuresTableComponent implements OnInit {
   public paginator: MatPaginator;
 
   constructor(
-    private measureService : MeasureService
+    private measureService : MeasureService,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -46,6 +48,11 @@ export class ClientMeasuresTableComponent implements OnInit {
       m.position = ++i;
     }
     return measuresList;
+  }
+
+  public edit(id : number) {
+    let url : string = "/clientes/" + this.clientId + "/medidas/" + id;
+    this.router.navigateByUrl(url);
   }
 
 }

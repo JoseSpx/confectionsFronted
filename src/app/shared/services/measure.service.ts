@@ -49,14 +49,14 @@ export class MeasureService {
       )
   }
 
-  public updateClothes(id : number, measure : Measure) : Observable<Measure> {
+  public update(id : number, measure : Measure) : Observable<Measure> {
     return this.http.patch(API_URL + URL_CONTROLLER + "/" + id, measure, httpOptions)
       .pipe(
         catchError(this.handleError<any>("update measure"))
       )
   }
 
-  public deleteClothesById(id : number) {
+  public deleteById(id : number) {
     return this.http.delete<Measure>(API_URL + URL_CONTROLLER + "/" + id)
       .pipe(
         catchError(this.handleError<Measure>("delete measure id :" + id))

@@ -24,6 +24,7 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { NewMeasureComponent } from './pages/new-measure/new-measure.component';
 import { MeasureService } from '../../shared/services/measure.service';
+import { EditMeasureComponent } from './pages/edit-measure/edit-measure.component';
 
 @NgModule({
   imports: [
@@ -52,7 +53,8 @@ import { MeasureService } from '../../shared/services/measure.service';
     ClientMeasuresComponent,
     ClientMeasuresTableComponent,
     DialogComponent,
-    NewMeasureComponent
+    NewMeasureComponent,
+    EditMeasureComponent
   ],
   entryComponents : [
     DialogComponent

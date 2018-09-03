@@ -9,6 +9,7 @@ import { ClientDetailComponent } from './modules/clients/pages/client-detail/cli
 import { MainDashboardComponent as ClothesMainComponent  } from './modules/clothes/pages/main-dashboard/main-dashboard.component';
 import { ClientMeasuresComponent } from './modules/clients/pages/client-measures/client-measures.component';
 import { NewMeasureComponent } from './modules/clients/pages/new-measure/new-measure.component';
+import { EditMeasureComponent } from './modules/clients/pages/edit-measure/edit-measure.component';
 
 const routes : Routes = [
   { path : '', redirectTo : 'inicio', pathMatch : 'full'},
@@ -24,7 +25,8 @@ const routes : Routes = [
         path : ':id/medidas', 
         children : [
           { path : '', component : ClientMeasuresComponent },
-          { path : 'nuevo', component : NewMeasureComponent }
+          { path : 'nuevo', component : NewMeasureComponent },
+          { path : ':idmeasure', component : EditMeasureComponent }
         ]
        }
     ]
