@@ -20,6 +20,10 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ClientMeasuresComponent } from './pages/client-measures/client-measures.component';
 import { ClientMeasuresTableComponent } from './components/client-measures-table/client-measures-table.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { MatSelectModule } from '@angular/material/select';
+import { NewMeasureComponent } from './pages/new-measure/new-measure.component';
+import { MeasureService } from '../../shared/services/measure.service';
 
 @NgModule({
   imports: [
@@ -34,7 +38,9 @@ import { ClientMeasuresTableComponent } from './components/client-measures-table
     MatPaginatorModule,
     MatProgressBarModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
+    //DialogOverviewExampleDialog
   ],
   declarations: [
     MainDashboardComponent, 
@@ -44,10 +50,16 @@ import { ClientMeasuresTableComponent } from './components/client-measures-table
     ClientsTableComponent, 
     ClientDetailComponent,
     ClientMeasuresComponent,
-    ClientMeasuresTableComponent
+    ClientMeasuresTableComponent,
+    DialogComponent,
+    NewMeasureComponent
+  ],
+  entryComponents : [
+    DialogComponent
   ],
   providers : [
-    ClientService
+    ClientService,
+    MeasureService
   ]
 })
 export class ClientsModule { }

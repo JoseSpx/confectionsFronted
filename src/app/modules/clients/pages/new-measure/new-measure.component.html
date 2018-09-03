@@ -1,0 +1,54 @@
+<div class="container-fluid" *ngIf="(client && clothesList)">
+  <div class="row">
+    <div class="col-12">
+        <app-button-back></app-button-back>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-12">
+      <h4> Nueva Medida </h4>
+      <hr>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-12">
+      <b>Cliente :</b> {{ client.name }} {{ client.lastName }}
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 col-md-8">
+        <form>
+            <mat-form-field class="full-width">
+              <mat-select placeholder="Tipos de Ropa" name="clothes" [(ngModel)]="clothesSelected">
+                <mat-option *ngFor="let clothes of clothesList" [value]="clothes">
+                  {{ clothes.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+              
+            <mat-form-field class="full-width">
+              <input matInput placeholder="Titulo" maxlength="100" name="title" [(ngModel)]="title">
+            </mat-form-field>
+          
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Comentario" maxlength="254" name="comment" [(ngModel)]="comment"></textarea>
+            </mat-form-field>
+
+            <div class="row">
+              <div class="col-12 d-flex justify-content-center"> 
+                  <button mat-raised-button color="primary" (click)="saveMeasure()"> 
+                    <mat-icon>save</mat-icon>
+                    Guardar 
+                  </button>
+              </div>
+            </div>
+
+          </form>  
+    </div>
+    <div class="d-none d-md-flex justify-content-center col-md-4">
+      <div class="d-flex justify-content-center">
+          <img class="img-fluid" src="./../../../../../assets/img/shirt.png" alt="">
+      </div>
+    </div>
+  </div>
+</div>

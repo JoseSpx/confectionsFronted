@@ -8,6 +8,7 @@ import { ListAllClientsComponent } from './modules/clients/pages/list-all-client
 import { ClientDetailComponent } from './modules/clients/pages/client-detail/client-detail.component';
 import { MainDashboardComponent as ClothesMainComponent  } from './modules/clothes/pages/main-dashboard/main-dashboard.component';
 import { ClientMeasuresComponent } from './modules/clients/pages/client-measures/client-measures.component';
+import { NewMeasureComponent } from './modules/clients/pages/new-measure/new-measure.component';
 
 const routes : Routes = [
   { path : '', redirectTo : 'inicio', pathMatch : 'full'},
@@ -19,7 +20,13 @@ const routes : Routes = [
       { path : 'registrar', component : RegisterClientComponent },
       { path : 'listar', component : ListAllClientsComponent },
       { path : ':id', component : ClientDetailComponent },
-      { path : ':id/medidas', component : ClientMeasuresComponent }
+      { 
+        path : ':id/medidas', 
+        children : [
+          { path : '', component : ClientMeasuresComponent },
+          { path : 'nuevo', component : NewMeasureComponent }
+        ]
+       }
     ]
   },
   { path : 'ropa', component : ClothesMainComponent },

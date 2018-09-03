@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="client">
   <div class="row">
     <div class="col-12">
       <app-button-back></app-button-back>
@@ -12,8 +12,28 @@
   </div>
   <div class="row mt-2">
     <div class="col-12">
-        <button mat-raised-button color="primary">Agregar nueva medida</button>
+      <b>Cliente :</b> {{ client.name }} {{ client.lastName }}
     </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+        <button mat-raised-button color="primary" (click)="newMeasure()">
+          Agregar nueva medida
+        </button>
+    </div>
+  </div>
+  <div class="row mt-4" *ngIf="state == 0">
+    <div class="col-12">
+      <form class="example-form">
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Favorite food" value="Sushi" maxlength="100">
+        </mat-form-field>
+      
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Leave a comment" maxlength="254"></textarea>
+        </mat-form-field>
+      </form>
+    </div>  
   </div>
   <div class="row mt-4">
     <div class="col-12">
