@@ -3,6 +3,13 @@
     margin-left: 250px;
     padding: 30px 20px 30px 20px;
     width: 100%;
+    transition-duration: 0.6s;
+}
+
+.main-body--full {
+    margin-left: 50px;
+    transition-duration: 1s;
+    /* transition-delay: 0.3s; */
 }
 
 

@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'confectionsFrontend';
+
+
+  public toogleBody(value : any) {
+    let el = document.getElementById("main-body");
+    el.classList.toggle("main-body--full");
+  }
+
 }
