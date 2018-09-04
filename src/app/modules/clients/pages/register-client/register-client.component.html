@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-8">
+    <div class="col-12 col-lg-8">
       <form class="full-width">
           <mat-form-field class="full-width">
             <input type="text" matInput placeholder="Nombres*" maxlength="254"
@@ -51,13 +51,13 @@
                   <mat-icon matPrefix>contact_phone</mat-icon>
               </mat-form-field>
             </div>
-            <div class="col-4 offset-4 mt-3">
-                <button (click)="saveClient()" class="full-width" mat-raised-button color="primary"> Registrar Cliente </button>
+            <div class="col-12 d-flex justify-content-center mt-2">
+                <button (click)="saveClient()" mat-raised-button color="primary"> Registrar Cliente </button>
             </div>
           </div>
       </form>          
     </div>
-    <div class="col-4 d-flex justify-content-center align-items-center">
+    <div class="d-none d-lg-flex col-lg-4 justify-content-center align-items-center">
       <div>
         <img class="img-fluid" src="./../../../../../assets/img/man2.png" alt="">
       </div>

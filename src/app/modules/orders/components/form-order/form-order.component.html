@@ -1,6 +1,6 @@
 
 <div class="row" *ngIf="client && order">
-  <div class="col-8">
+  <div class="col-12 col-lg-8">
     <form class="full-width">
 
       <div class="row">
@@ -40,13 +40,13 @@
       
 
       <div class=row>
-        <div class="col-4 offset-4 mt-3">
-            <button (click)="onClickBtn()" class="full-width" mat-raised-button color="primary"> Registrar Pedido </button>
+        <div class="col-12 d-flex justify-content-center mt-3">
+            <button (click)="onClickBtn()" mat-raised-button color="primary"> Registrar Pedido </button>
         </div>
       </div>
     </form>          
   </div>
-  <div class="col-4 d-flex justify-content-center align-items-center">
+  <div class="d-none d-lg-flex col-lg-4  justify-content-center align-items-center">
     <div>
       <img class="img-fluid" src="./../../../../../assets/img/shopping-bag.png" alt="">
     </div>
