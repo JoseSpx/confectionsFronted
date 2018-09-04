@@ -13,6 +13,8 @@ import { EditMeasureComponent } from './modules/clients/pages/edit-measure/edit-
 import { ClientOrderComponent } from './modules/clients/pages/client-order/client-order.component';
 import { NewOrderComponent } from './modules/orders/pages/new-order/new-order.component';
 import { EditOrderComponent } from './modules/orders/pages/edit-order/edit-order.component';
+import { MainComponent as OrderMainComponent } from './modules/orders/pages/main/main.component';
+
 
 const routes : Routes = [
   { path : '', redirectTo : 'inicio', pathMatch : 'full'},
@@ -43,6 +45,9 @@ const routes : Routes = [
     ]
   },
   { path : 'ropa', component : ClothesMainComponent },
+  { 
+    path : 'pedidos', component : OrderMainComponent
+  },
   { path :  '**', redirectTo : 'inicio', pathMatch : 'full'}
 ]
 
