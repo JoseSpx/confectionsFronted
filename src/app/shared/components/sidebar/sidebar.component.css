@@ -10,12 +10,22 @@
     display: block;
 }
 
-/* .side-nav--show {
-    
-} */
 
 .side-nav--hide  {
     left: -200px;
+}
+
+.side-nav--hide .items-hide {
+    display: none;
+}
+
+.side-nav--hide .icon-right {
+    display: flex;
+    justify-content: end !important;
+}
+
+.side-nav--hide .icon-right .icon-item-right {
+    margin-right: 10px;
 }
 
 .toggle-btn {
