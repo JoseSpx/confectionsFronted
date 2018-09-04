@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { OrderService } from '../../../../shared/services/order.service';
 import { Order } from '../../../../shared/models/Order';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-orders-table',
@@ -10,14 +11,15 @@ import { Order } from '../../../../shared/models/Order';
 })
 export class OrdersTableComponent implements OnInit {
 
-  public displayedColumns: string[] = ['dateDeal', 'dateTrial', 'dateDelivery', 'comment', 'edit'];
+  public displayedColumns: string[] = ['dateDeal', 'dateTrial', 'dateDelivery', 'names', 'client' ,'edit'];
   public dataSource;
 
   @ViewChild(MatPaginator) 
   public paginator: MatPaginator;
 
   constructor(
-    private orderService : OrderService
+    private orderService : OrderService,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -35,5 +37,13 @@ export class OrdersTableComponent implements OnInit {
       )
   }
 
+  public goOrder(idClient : number ,idOrder : number) {
+    let url : string = "/clientes/" + idClient + "/pedidos/" + idOrder;
+    this.router.navigateByUrl(url);
+  }
+
+  public goClient(id : number) {
+    this.router.navigateByUrl("/clientes/" + id);
+  }
 
 }

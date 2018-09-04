@@ -1,7 +1,7 @@
 <div class="container-fluid" *ngIf="client && order">
     <div class="row">
       <div class="col-12">
-        <app-button-back></app-button-back>
+        <app-button-back #btnBack></app-button-back>
       </div>
     </div>
     <div class="row mt-4">
@@ -13,6 +13,14 @@
     <div class="row mt-2">
       <div class="col-12">
         <b>Cliente :</b> {{ client.name }} {{ client.lastName }}
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col-8 d-flex justify-content-end">
+        <button mat-raised-button color="warn" (click)="delete(order.id)">
+          <mat-icon> delete </mat-icon>
+          Eliminar
+        </button>
       </div>
     </div>
     <div class="row mt-4">
