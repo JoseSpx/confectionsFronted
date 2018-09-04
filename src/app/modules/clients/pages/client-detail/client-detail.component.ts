@@ -63,11 +63,27 @@ export class ClientDetailComponent implements OnInit {
         return;
     }
 
-    this.clientService.updateClient(this.client.id, this.client)
+    this.clientService.searchByDniClient(this.client.dni)
       .subscribe(
-        () => this.location.back()
-      );
-    console.log(this.client);
+        data => {
+          if (data == null) {
+            // console.log("no existe", data)
+            this.clientService.updateClient(this.client.id, this.client)
+              .subscribe(
+                 () => this.btnBack.goBack()
+            );
+
+          } else {
+            // console.log("SI existe", data)
+            swal({
+              title : "",
+              html : "<h4> Dni ya existe </h4>",
+              confirmButtonColor: '#303F9F',
+              });
+          }
+        }
+      )
+
   }
 
   public deleteClient() {

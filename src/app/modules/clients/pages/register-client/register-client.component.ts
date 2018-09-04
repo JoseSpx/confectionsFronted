@@ -48,10 +48,28 @@ export class RegisterClientComponent implements OnInit {
         return;
     }
 
-    this.clientService.saveClient(this.client)
+    this.clientService.searchByDniClient(this.client.dni)
       .subscribe(
-        () => this.btnBack.goBack()
-      );
+        data => {
+          if (data == null) {
+            // console.log("no existe", data)
+            this.clientService.saveClient(this.client)
+              .subscribe(
+                 () => this.btnBack.goBack()
+            );
+
+          } else {
+            // console.log("SI existe", data)
+            swal({
+              title : "",
+              html : "<h4> Dni ya existe </h4>",
+              confirmButtonColor: '#303F9F',
+              });
+          }
+        }
+      )
+
+    
   }
 
 
