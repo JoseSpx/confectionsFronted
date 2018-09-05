@@ -54,10 +54,9 @@ export class NewMeasureComponent implements OnInit {
 
     } else {
       let measure : Measure = {
-        title : this.title,
-        comment : this.comment,
+        model : this.comment,
         client : this.client,
-        clothes : this.clothesSelected
+        typemeasure : null
       }
 
       this.measureService.save(measure)

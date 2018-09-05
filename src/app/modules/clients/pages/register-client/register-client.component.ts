@@ -19,6 +19,7 @@ export class RegisterClientComponent implements OnInit {
     name : "",
     lastName : "",
     address : "",
+    email : "",
     dni : "",
     phone1 : "",
     phone2 : ""
@@ -35,6 +36,7 @@ export class RegisterClientComponent implements OnInit {
     this.client.lastName = this.client.lastName.trim();
     this.client.address = this.client.address.trim();
     this.client.dni = this.client.dni.trim();
+    this.client.email = this.client.email.trim();
     this.client.phone1 = this.client.phone1.trim();
     this.client.phone2 = this.client.phone2.trim();
 

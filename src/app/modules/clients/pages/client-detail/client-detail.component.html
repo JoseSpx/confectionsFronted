@@ -56,6 +56,11 @@
                 <mat-icon matPrefix>credit_card</mat-icon>
             </mat-form-field>
             <mat-form-field class="full-width">
+              <input type="text" matInput placeholder="Email" name="email" maxlength="254"
+              [(ngModel)]="client.email">
+              <mat-icon matPrefix> email </mat-icon>
+          </mat-form-field>
+            <mat-form-field class="full-width">
                 <input type="text" matInput placeholder="Dirección ( opcional )" maxlength="254"
                  name="address" [(ngModel)]="client.address" minlength="1" maxlength="255">
                 <mat-icon matPrefix>add_location</mat-icon>

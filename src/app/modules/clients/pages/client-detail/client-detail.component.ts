@@ -50,6 +50,7 @@ export class ClientDetailComponent implements OnInit {
     this.client.lastName = this.client.lastName.trim();
     this.client.address = this.client.address.trim();
     this.client.dni = this.client.dni.trim();
+    this.client.email = this.client.email.trim();
     this.client.phone1 = this.client.phone1.trim();
     this.client.phone2 = this.client.phone2.trim();
 
@@ -75,11 +76,19 @@ export class ClientDetailComponent implements OnInit {
 
           } else {
             // console.log("SI existe", data)
-            swal({
-              title : "",
-              html : "<h4> Dni ya existe </h4>",
-              confirmButtonColor: '#303F9F',
-              });
+
+            if (data[0].dni == this.client.dni) {
+              this.clientService.updateClient(this.client.id, this.client)
+                .subscribe(
+                  () => this.btnBack.goBack()
+              );
+            } else {
+              swal({
+                title : "",
+                html : "<h4> Dni ya existe </h4>",
+                confirmButtonColor: '#303F9F',
+                });
+            }
           }
         }
       )

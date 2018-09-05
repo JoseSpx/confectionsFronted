@@ -38,10 +38,10 @@ export class EditMeasureComponent implements OnInit {
   }
 
   public updateMeasure() {
-    this.measure.title = this.measure.title.trim();
-    this.measure.comment = this.measure.comment.trim();
 
-    if (this.measure.title == "" || this.measure.comment == "") {
+    this.measure.model = this.measure.model.trim();
+
+    if (this.measure.model == "") {
       swal({
         title : "",
         html : "<h4> Existen campos vacios </h4>",
@@ -50,10 +50,9 @@ export class EditMeasureComponent implements OnInit {
     } else {
 
       let measure : Measure = {
-        title : this.measure.title,
-        comment : this.measure.comment,
+        model : this.measure.model,
         client : this.measure.client,
-        clothes : this.clothesSelected
+        typemeasure : null
       }
 
       this.measureService.update(this.idMeasure, measure)
@@ -97,18 +96,18 @@ export class EditMeasureComponent implements OnInit {
   }
 
   public findMeasure(id : number) {
-    this.measureService.findById(id)
-      .subscribe(
-        data => { 
-          this.measure = data;
-          for (let c of this.clothesList) {
-            if (this.measure.clothes.id == c.id){
-              this.clothesSelected = c;
-              break;
-            }
-          }
-        }
-      )
+    // this.measureService.findById(id)
+    //   .subscribe(
+    //     data => { 
+    //       this.measure = data;
+    //       for (let c of this.clothesList) {
+    //         if (this.measure.clothes.id == c.id){
+    //           this.clothesSelected = c;
+    //           break;
+    //         }
+    //       }
+    //     }
+    //   )
   }
 
   public findAllClothes() {

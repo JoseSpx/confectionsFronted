@@ -33,19 +33,19 @@
                 </mat-select>
               </mat-form-field>
                 
-              <mat-form-field class="full-width">
+              <!-- <mat-form-field class="full-width">
                 <input matInput placeholder="Titulo" maxlength="100" name="title" [(ngModel)]="measure.title">
-              </mat-form-field>
+              </mat-form-field> -->
             
               <mat-form-field class="full-width">
-                <textarea matInput placeholder="Comentario" maxlength="254" name="comment" [(ngModel)]="measure.comment"></textarea>
+                <textarea matInput placeholder="Comentario" maxlength="254" name="comment" [(ngModel)]="measure.model"></textarea>
               </mat-form-field>
   
               <div class="row">
                 <div class="col-12 d-flex justify-content-center"> 
                     <button mat-raised-button color="primary" (click)="updateMeasure()"> 
                       <mat-icon>save</mat-icon>
-                      Guardar 
+                      Guardar
                     </button>
                 </div>
               </div>

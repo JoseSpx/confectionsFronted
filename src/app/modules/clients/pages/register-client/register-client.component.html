@@ -26,8 +26,13 @@
           <mat-form-field class="full-width">
               <input type="text" matInput placeholder="DNI*" maxlength="254"
                 name="dni" [(ngModel)]="client.dni">
-              <mat-icon matPrefix>credit_card</mat-icon>
+              <mat-icon matPrefix> credit_card </mat-icon>
           </mat-form-field>
+          <mat-form-field class="full-width">
+            <input type="text" matInput placeholder="Email*" maxlength="254"
+              name="email" [(ngModel)]="client.email">
+            <mat-icon matPrefix> email </mat-icon>
+        </mat-form-field>
           <mat-form-field class="full-width">
               <input type="text" matInput placeholder="Dirección"
                  name="address" [(ngModel)]="client.address" minlength="1" maxlength="255">

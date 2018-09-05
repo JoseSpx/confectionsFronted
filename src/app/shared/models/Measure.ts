@@ -1,13 +1,12 @@
 import { Client } from "./Client";
-import { Clothe } from "./Clothe";
+import { TypeMerasure } from "./TypeMeasure";
 
 export interface Measure {
 
     position? : number;
     id? : number;
-    title : string;
-    comment : string;
+    model : string;
     client : Client;
-    clothes : Clothe;
+    typemeasure : TypeMerasure;
 
 }
