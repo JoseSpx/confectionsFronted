@@ -83,7 +83,7 @@ export class ClientMeasuresTableComponent implements OnInit {
             let mcl = {
               id : null,
               name : allTypeMeasures[i].name,
-              model : "no existe",
+              model : "0cm",
               clientId : this.client.id,
               typeMeasureId : allTypeMeasures[i].id,
               typeMeasure : allTypeMeasures[i]
@@ -144,13 +144,16 @@ export class ClientMeasuresTableComponent implements OnInit {
 
   // DIALOG
   public openDialog(clientMeasure : ClientMeasures, operation : string): void {
+    
+    let modelAux : string = clientMeasure.model;
+
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '400px',
       data: { clientMeasure: clientMeasure }
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      //console.log('The dialog was closed ', result);
+      console.log('The dialog was closed ', result);
 
       if (operation == "save") {
         if (result != null) {
@@ -164,12 +167,25 @@ export class ClientMeasuresTableComponent implements OnInit {
           }
 
           this.measureService.save(m)
-            .subscribe()
+            .subscribe(
+              () => {
+                this.findAllTypeMeasureByClothesId(this.clothesSelected.id);
+              }
+            )
         }
       } else if (operation == "update") {
-        if (result != null) {
+       
+        if (result != null && result.model != null) {
+
+          // console.log("ACTUALIZAR ------- " + result.model + " --- ");
           this.measureService.update(result.id, result)
-          .subscribe()
+          .subscribe(
+            () => {
+              this.findAllTypeMeasureByClothesId(this.clothesSelected.id);
+            }
+          )
+        } else {
+          clientMeasure.model = modelAux;
         }
         
       }
