@@ -1,6 +1,7 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Clothe } from '../../../../shared/models/Clothe';
 import { ClothesService } from '../../../../shared/services/clothes.service';
+import { Router } from '@angular/router';
 
 declare var swal : any;
 
@@ -17,12 +18,14 @@ export class MainDashboardComponent implements OnInit {
   public title : string = "";
   public btnText : string = "";
 
-  public displayedColumns: string[] = ['Nro', 'name', 'edit', 'delete'];
+  public displayedColumns: string[] = ['Nro', 'name', 'edit','measures', 'delete'];
   public dataSource;
 
   public clothesSelected : Clothe;
 
-  constructor(private clothesService : ClothesService, private changeDetectorRef : ChangeDetectorRef) { }
+  constructor(
+    private clothesService : ClothesService,
+    private router : Router) { }
 
   ngOnInit() {
     // this.clothes = this.clothesService.findAllClothes();
@@ -138,6 +141,10 @@ export class MainDashboardComponent implements OnInit {
       id : 0,
       name : ''
     }
+  }
+
+  public goToMeasuresOfClothes(id : number) {
+    this.router.navigateByUrl("/ropa/" + id + "/medidas")
   }
 
 }

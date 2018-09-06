@@ -14,6 +14,7 @@ import { ClientOrderComponent } from './modules/clients/pages/client-order/clien
 import { NewOrderComponent } from './modules/orders/pages/new-order/new-order.component';
 import { EditOrderComponent } from './modules/orders/pages/edit-order/edit-order.component';
 import { MainComponent as OrderMainComponent } from './modules/orders/pages/main/main.component';
+import { ClothesListMeasuresComponent } from './modules/clothes/pages/clothes-list-measures/clothes-list-measures.component';
 
 
 const routes : Routes = [
@@ -44,7 +45,13 @@ const routes : Routes = [
       }
     ]
   },
-  { path : 'ropa', component : ClothesMainComponent },
+  { 
+    path : 'ropa',
+    children : [
+      { path : '', component : ClothesMainComponent },
+      { path : ':id/medidas', component : ClothesListMeasuresComponent }
+    ]
+  },
   { 
     path : 'pedidos', component : OrderMainComponent
   },

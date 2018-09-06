@@ -1,10 +1,11 @@
 import { Clothe } from "./Clothe";
 
-export interface TypeMerasure {
+export interface TypeMeasure {
 
     position? : number;
     id? : number;
-    eliminated? : 0;
-    clothes : Clothe; 
+    name : string;
+    eliminated? : string;
+    clothes? : Clothe; 
 
 }

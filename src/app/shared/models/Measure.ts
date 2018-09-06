@@ -1,5 +1,5 @@
 import { Client } from "./Client";
-import { TypeMerasure } from "./TypeMeasure";
+import { TypeMeasure } from "./TypeMeasure";
 
 export interface Measure {
 
@@ -7,6 +7,6 @@ export interface Measure {
     id? : number;
     model : string;
     client : Client;
-    typemeasure : TypeMerasure;
+    typemeasure : TypeMeasure;
 
 }
