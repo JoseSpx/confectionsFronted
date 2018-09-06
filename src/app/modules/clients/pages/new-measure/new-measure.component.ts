@@ -21,8 +21,7 @@ export class NewMeasureComponent implements OnInit {
   public id : number;
   public clothesList : Clothe[];
   public clothesSelected : Clothe;
-  public title : string = "";
-  public comment : string = "";
+  public model : string = "";
 
   @ViewChild('btnBack')
   private btnBack : ButtonBackComponent;
@@ -42,10 +41,9 @@ export class NewMeasureComponent implements OnInit {
   }
 
   public saveMeasure() {
-    this.title = this.title.trim();
-    this.comment = this.comment.trim();
+    this.model = this.model.trim();
 
-    if (this.title == "" || this.comment == "") {
+    if (this.model == "") {
       swal({
         title : "",
         html : "<h4> Existen campos vacios </h4>",
@@ -54,9 +52,9 @@ export class NewMeasureComponent implements OnInit {
 
     } else {
       let measure : Measure = {
-        model : this.comment,
+        model : this.model,
         client : this.client,
-        typemeasure : null
+        typeMeasure : null
       }
 
       this.measureService.save(measure)

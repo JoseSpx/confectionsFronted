@@ -52,7 +52,7 @@ export class EditMeasureComponent implements OnInit {
       let measure : Measure = {
         model : this.measure.model,
         client : this.measure.client,
-        typemeasure : null
+        typeMeasure : null
       }
 
       this.measureService.update(this.idMeasure, measure)

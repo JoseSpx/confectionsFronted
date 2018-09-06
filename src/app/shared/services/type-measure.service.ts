@@ -50,6 +50,13 @@ export class TypeMeasureService {
       )
   }
 
+  public findAllByClothesId(id : number) {
+    return this.http.get<TypeMeasure[]>(API_URL + "/clothes/" + id + URL_CONTROLLER)
+      .pipe(
+        catchError(this.handleError<TypeMeasure[]>("findAll Typemeasure by clothe id"))
+      ) 
+  }
+
 
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

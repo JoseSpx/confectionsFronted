@@ -7,6 +7,6 @@ export interface Measure {
     id? : number;
     model : string;
     client : Client;
-    typemeasure : TypeMeasure;
+    typeMeasure : TypeMeasure;
 
 }

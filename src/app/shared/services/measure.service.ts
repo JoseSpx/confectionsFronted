@@ -42,6 +42,15 @@ export class MeasureService {
       )
   }
 
+  public findAllByClientIdAndClothesId(idClient : number, idClothes) : Observable<Measure[]> {
+    return this.http.get<Measure[]>(API_URL + URL_CONTROLLER + "/client/" + idClient + "/clothes/" + idClothes)
+      .pipe(
+        catchError(this.handleError<Measure[]>("find all measures by client id and clothes id", []))
+      )
+  }
+
+  //measures/client/{idClient}/clothes/{idClothes}
+
   public findAll() : Observable<Measure[]> {
     return this.http.get<Measure[]>(API_URL + URL_CONTROLLER)
       .pipe(

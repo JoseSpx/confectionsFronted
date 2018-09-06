@@ -1,12 +1,10 @@
 import { Component, OnInit , Inject} from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
-import { DialogComponent } from '../../components/dialog/dialog.component';
-import { ClothesService } from '../../../../shared/services/clothes.service';
 import { Clothe } from '../../../../shared/models/Clothe';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Client } from '../../../../shared/models/Client';
 import { ClientService } from '../../../../shared/services/client.service';
-
+import { ClothesService } from './../../../../shared/services/clothes.service';
 
 @Component({
   selector: 'app-client-measures',
@@ -19,11 +17,14 @@ export class ClientMeasuresComponent implements OnInit {
   public client : Client;
   public clothesList : Clothe[] = [];
 
+  public clothesSelected : Clothe;
+
   constructor(
     public dialog: MatDialog,
     private router : Router,
     private route : ActivatedRoute,
-    private clientService : ClientService) { }
+    private clientService : ClientService,
+    private clothesService : ClothesService) { }
 
   ngOnInit() {
     this.id = this.getId();
@@ -31,24 +32,32 @@ export class ClientMeasuresComponent implements OnInit {
       data => this.client = data
     )
 
-    // this.clothesService.findAllClothes()
-    //   .subscribe(
-    //     data => { 
-    //       this.clothesList = data;
-    //       console.log(data);
-    //     }
-    //   )
+    this.clothesService.findAllClothes()
+      .subscribe(
+        data => { 
+          this.clothesList = data;
+          if (this.clothesList.length >= 1) {
+            this.clothesSelected = this.clothesList[0];
+            //alert(this.clothesclothesSelected.name);
+          }
+          // console.log(data);
+        }
+      )
   }
 
-  public newMeasure() {
+  // public newMeasure() {
     
-    this.router.navigateByUrl("/clientes/" + this.id + "/medidas/nuevo");
-  }
+  //   this.router.navigateByUrl("/clientes/" + this.id + "/medidas/nuevo");
+  // }
 
   public getId() : number {
     let id = +this.route.snapshot.paramMap.get("id");
     return id;
   } 
+
+  public changeClothes() {
+    console.log("changed " + this.clothesSelected.name);
+  }
 
   // public openDialog(): void {
   //   const dialogRef = this.dialog.open(DialogComponent, {

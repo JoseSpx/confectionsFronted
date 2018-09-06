@@ -1,4 +1,4 @@
-<div class="container-fluid" *ngIf="client">
+<div class="container-fluid" *ngIf="client && clothesList && clothesSelected">
   <div class="row">
     <div class="col-12">
       <app-button-back></app-button-back>
@@ -15,16 +15,28 @@
       <b>Cliente :</b> {{ client.name }} {{ client.lastName }}
     </div>
   </div>
-  <div class="row mt-3">
+  <!-- <div class="row mt-3">
     <div class="col-12">
         <button mat-raised-button color="primary" (click)="newMeasure()">
           Agregar nueva medida
         </button>
     </div>
+  </div> -->
+  <div class="row">
+    <div class="col-12">
+      <span> Seleccione la ropa : </span>
+      <mat-form-field class="ml-2">
+        <mat-select name="clothes" [(ngModel)]="clothesSelected" (selectionChange)="changeClothes()">
+          <mat-option *ngFor="let clothes of clothesList" [value]="clothes">
+            {{ clothes.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
   </div>
   <div class="row mt-4">
     <div class="col-12">
-      <app-client-measures-table [clientId]="client.id"></app-client-measures-table>
+      <app-client-measures-table *ngIf="client && clothesSelected" [client]="client" [clothesSelected]="clothesSelected"></app-client-measures-table>
     </div>
   </div>
 </div>
