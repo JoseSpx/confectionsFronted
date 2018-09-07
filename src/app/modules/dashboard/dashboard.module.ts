@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { BoldPipe } from '../../shared/pipes/bold.pipe';
 import { ComponentsModule } from '../../shared/components/components.module';
 
 @NgModule({
@@ -16,8 +15,7 @@ import { ComponentsModule } from '../../shared/components/components.module';
     ComponentsModule
   ],
   declarations: [
-    DashboardComponent,
-    BoldPipe
+    DashboardComponent
   ],
   exports : [
     DashboardComponent
