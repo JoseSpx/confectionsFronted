@@ -21,7 +21,10 @@ export class MainDashboardComponent implements OnInit {
   public displayedColumns: string[] = ['Nro', 'name', 'edit','measures', 'delete'];
   public dataSource;
 
+  public loaded : boolean = false;
+  
   public clothesSelected : Clothe;
+
 
   constructor(
     private clothesService : ClothesService,
@@ -39,6 +42,7 @@ export class MainDashboardComponent implements OnInit {
           this.clothes = data;
           console.log(data);
           this.dataSource = this.insertPositions();
+          this.loaded = true;
           // this.changeDetectorRef.detectChanges();
         }
       )

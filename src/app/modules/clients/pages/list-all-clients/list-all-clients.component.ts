@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListAllClientsComponent implements OnInit {
 
+  public loaded : boolean = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public hideProgressBar($event) {
+    this.loaded = $event;
   }
 
 }

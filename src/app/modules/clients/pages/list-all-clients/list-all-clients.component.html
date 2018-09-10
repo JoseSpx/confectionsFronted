@@ -11,7 +11,7 @@
         <!-- <mat-divider [inset]="true"></mat-divider> -->
       </div>
   </div>
-  
+  <app-progress-bar *ngIf="loaded == false">  </app-progress-bar>
   <!-- <div class="row mt-4">
       <div class="col-12">
         <h6> Lista de todos los clientes </h6>
@@ -19,7 +19,7 @@
     </div> -->
   <div class="row mt-4">
     <div class="col-12">
-      <app-clients-table></app-clients-table>
+      <app-clients-table (loaded)="hideProgressBar($event)" ></app-clients-table>
     </div>
   </div>
 </div>

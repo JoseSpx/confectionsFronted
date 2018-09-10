@@ -26,6 +26,8 @@ export class ClothesListMeasuresComponent implements OnInit {
 
   public typeMeasureSelected : TypeMeasure;
 
+  public loaded : boolean = false;
+
   constructor(
     private clothesService : ClothesService,
     private route : ActivatedRoute,
@@ -44,6 +46,7 @@ export class ClothesListMeasuresComponent implements OnInit {
           this.clothes = data;
           console.log(data);
           this.dataSource = this.insertPositions(this.filterByEliminated(this.clothes.typeMeasureSet));
+          this.loaded = true;
           // this.changeDetectorRef.detectChanges();
         }
       )

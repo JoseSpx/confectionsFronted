@@ -11,7 +11,8 @@ import { ButtonBackComponent } from './button-back/button-back.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarMaterialComponent } from './navbar-material/navbar-material.component';
-
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   imports: [
@@ -21,21 +22,24 @@ import { NavbarMaterialComponent } from './navbar-material/navbar-material.compo
     MatButtonModule,
     BrowserAnimationsModule,
     MatIconModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatProgressBarModule
   ],
   exports : [
     NavbarComponent,
     SidebarComponent,
     ShortcutsPaneComponent,
     ButtonBackComponent,
-    NavbarMaterialComponent
+    NavbarMaterialComponent,
+    ProgressBarComponent
   ],
   declarations: [
     NavbarComponent,
     SidebarComponent,
     ShortcutsPaneComponent,
     ButtonBackComponent,
-    NavbarMaterialComponent
+    NavbarMaterialComponent,
+    ProgressBarComponent
   ]
 })
 export class ComponentsModule { }

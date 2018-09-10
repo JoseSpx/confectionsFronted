@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Client } from './../../../../shared/models/Client';
 import { clients } from '../../../../shared/mocks/clients';
 import { Router } from '@angular/router';
 import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { ClientService } from '../../../../shared/services/client.service';
+
 
 @Component({
   selector: 'app-clients-table',
@@ -15,6 +16,9 @@ export class ClientsTableComponent implements OnInit {
   public displayedColumns: string[] = ['nro', 'name', 'lastName', 'dni', 'phone1', 'edit', 'measures','order'];
   public dataSource;
   public clients : Client[];
+
+  @Output()
+  public loaded = new EventEmitter<boolean>();
 
   @ViewChild(MatPaginator) 
   public paginator: MatPaginator;
@@ -33,7 +37,14 @@ export class ClientsTableComponent implements OnInit {
           this.clients = data;
           this.dataSource = new MatTableDataSource<Client>(this.putNroOrder());
           this.dataSource.paginator = this.paginator;
+          
+          this.emit();
        });
+  }
+
+  public emit() {
+    console.log("TRUEE");
+    this.loaded.emit(true);
   }
 
   public putNroOrder() : Client[] {
